@@ -1,0 +1,18 @@
+#!/bin/sh
+staged_files=$(git diff --name-only --staged)
+for file_name in ${staged_files}; do
+    if [ "${file_name: -3}" = ".py" ]; then
+	python_files="${python_files} $file_name"
+    fi
+done 
+
+if [ ! -z "${python_files}" ]; then 
+    black --check ${python_files}
+fi
+
+if [ "$?" != "0" ]; then 
+	echo "-----------------"
+	echo "please run black before creating a commit"
+	echo "-----------------"
+	exit 1
+fi
