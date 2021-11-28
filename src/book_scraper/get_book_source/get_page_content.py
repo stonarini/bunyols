@@ -7,14 +7,18 @@ def get_page_content(URL):
     try:
         webpage = request_page(URL)
 
-    except StatusCodeException as exception:
-        print(f"Error {exception.status_code}\nIs {URL} correct?\n")
+    except StatusCodeException as status_code:
+        print(f"Error {status_code}\nIs {URL} correct?\n")
 
     except ConnectTimeout:
-        print(f"Connection Timeout while trying to connect to {URL}\nPlease, try again later.")
+        print(
+            f"Connection Timeout while trying to connect to {URL}\nPlease, try again later."
+        )
 
     except ConnectionError:
-        print(f"Connection error while trying to connect to the {URL}\nAre you connected to the internet?")
+        print(
+            f"Connection error while trying to connect to the {URL}\nAre you connected to the internet?"
+        )
 
     else:
         return webpage
