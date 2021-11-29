@@ -1,7 +1,6 @@
 import pytest
 from bs4 import BeautifulSoup
 from src.book_scraper.get_book_dynamic_data.get_book_price import get_book_price
-from test.book_scraper.get_book_dynamic_data.page_source import page_source
 
 
 @pytest.mark.test_price_exists
