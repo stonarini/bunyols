@@ -10,9 +10,7 @@ website = get_book_source(
 
 @pytest.mark.test_isbn_is_string
 def test_isbn_is_string():
-    assert isinstance(
-        get_book_isbn(website), str
-    ), "ISBN has to be a string type object"
+    assert isinstance(get_book_isbn(website), str)
 
 
 @pytest.mark.test_isbn_lenght
