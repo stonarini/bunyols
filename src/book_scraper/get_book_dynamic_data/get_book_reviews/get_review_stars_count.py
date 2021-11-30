@@ -1,4 +1,6 @@
-from src.book_scraper.get_book_dynamic_data.get_star_count import get_star_count
+from src.book_scraper.get_book_dynamic_data.get_book_reviews.get_star_count import (
+    get_star_count,
+)
 
 
 def get_review_stars_count(soup):
