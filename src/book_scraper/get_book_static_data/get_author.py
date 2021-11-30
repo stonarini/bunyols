@@ -1,7 +1,4 @@
 import requests, json
-from src.book_scraper.get_book_static_data.request_openlibary_page import (
-    request_openlibrary_page,
-)
 
 
 def get_author(authors_data):
