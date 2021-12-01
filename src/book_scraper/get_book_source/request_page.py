@@ -1,5 +1,5 @@
 import requests
-from src.book_scraper.get_book_source.exceptions import StatusCodeException
+from .exceptions import StatusCodeException
 
 
 def request_page(URL):

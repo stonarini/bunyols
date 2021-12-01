@@ -1,4 +1,4 @@
-from src.book_scraper.get_book_source.get_page_content import get_page_content
+from .get_page_content import get_page_content
 
 
 def get_book_source(URL):

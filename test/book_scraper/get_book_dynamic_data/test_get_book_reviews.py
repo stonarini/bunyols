@@ -1,8 +1,6 @@
 import pytest
 from bs4 import BeautifulSoup
-from src.book_scraper.get_book_dynamic_data.get_book_reviews.get_book_reviews import (
-    get_book_reviews,
-)
+from src.book_scraper.get_book_dynamic_data.get_book_reviews import get_book_reviews
 
 
 @pytest.mark.test_reviews_are_none

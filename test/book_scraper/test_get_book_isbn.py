@@ -1,6 +1,6 @@
 import pytest
 from src.book_scraper.get_book_isbn import get_book_isbn
-from src.book_scraper.get_book_source.get_book_source import get_book_source
+from src.book_scraper.get_book_source import get_book_source
 
 
 website = get_book_source(

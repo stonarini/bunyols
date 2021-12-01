@@ -1,5 +1,5 @@
 import json
-from src.book_scraper.get_book_source.request_page import request_page
+from src.book_scraper.get_book_source import request_page
 
 
 def request_openlibrary_page(page):

@@ -1,4 +1,4 @@
-from src.book_scraper.get_book_dynamic_data.amazon_scraper_config import reviews_tag
+from ..amazon_scraper_config import reviews_tag
 
 
 def get_total_reviews(soup):

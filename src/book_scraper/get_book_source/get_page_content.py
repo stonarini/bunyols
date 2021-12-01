@@ -1,6 +1,6 @@
 from requests import ConnectionError, ConnectTimeout
 from src.book_scraper.get_book_source.request_page import request_page
-from src.book_scraper.get_book_source.exceptions import StatusCodeException
+from .exceptions import StatusCodeException
 
 
 def get_page_content(URL):

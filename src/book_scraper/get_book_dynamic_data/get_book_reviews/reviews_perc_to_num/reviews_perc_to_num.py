@@ -1,7 +1,5 @@
-from src.book_scraper.get_book_dynamic_data.get_book_reviews.reviews_perc_to_num.fix_percentage_sum import (
-    fix_percentage_sum,
-)
 import math
+from .fix_percentage_sum import fix_percentage_sum
 
 
 def reviews_perc_to_num(reviews):

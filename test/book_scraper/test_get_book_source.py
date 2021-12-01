@@ -1,5 +1,5 @@
 import pytest
-from src.book_scraper.get_book_source.get_book_source import get_book_source
+from src.book_scraper.get_book_source import get_book_source
 
 
 @pytest.mark.test_link_does_not_exist
