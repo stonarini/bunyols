@@ -11,7 +11,7 @@ def get_total_reviews(soup):
             .string.strip()
             .replace(",", "")
         )
-    except TypeError:
+    except (AttributeError, TypeError):
         return "Na"
     else:
         return int(total_reviews.split(" ")[0])
