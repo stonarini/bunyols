@@ -24,6 +24,3 @@ def test_get_book_static_data():
         assert True
     else:
         assert False
-
-
-
