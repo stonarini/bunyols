@@ -1,0 +1,1 @@
+from .get_book_static_data import get_book_static_data
