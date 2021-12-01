@@ -1,18 +1,17 @@
-links = [
-    # ("https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/", "Rober C Martin Series", ["IT"]),
-    # ("https://www.amazon.com/Pragmatic-Programmer-journey-mastery-Anniversary/dp/0135957052/", None, ["IT"]),
-    # ("https://www.amazon.com/1984-Signet-Classics-George-Orwell/dp/0451524934/", None, ["Classic", "Alternative"]),
-    # ("https://www.amazon.com/Divina-Commedia-Inferno-Purgatorio-Paradiso/dp/B08P3SLT1S/", None, ["Classic"]),
-    # ("https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124/", None, ["IT"]),
-    # ("https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670/", None, ["IT"]),
-    # ("https://www.amazon.com/Automate-Boring-Stuff-Python-2nd/dp/1593279922/", None, ["IT"]),
-    (
-        "https://www.amazon.com/Six-Easy-Pieces-Essentials-Explained/dp/0465025277/",
-        None,
-        ["Fisica", "Matematicas"],
-    )
-]
+from .get_book_static_data import get_book_static_data
+from .get_book_source import get_book_source
+from .get_book_isbn import get_book_isbn
+from .get_book_dynamic_data import get_book_dynamic_data
 
 
-def book_scraper(links):
-    pass
+def book_scraper(items):
+    for item in items:
+        URL, family, categories = item
+        content = get_book_source(URL)
+        ISBN = get_book_isbn(content)
+
+        static_data = get_book_static_data("/isbn/" + ISBN)
+        dynamic_data = get_book_dynamic_data(content)
+
+        book_data = {**static_data, **dynamic_data}
+        print(book_data)
