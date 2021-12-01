@@ -6,6 +6,5 @@ def request_openlibrary_page(page):
 
     URL = f"https://openlibrary.org/{page}.json"
     webpage = request_page(URL)
-    content = webpage.text
-    data = json.loads(content)
+    data = json.loads(webpage.content)
     return data
