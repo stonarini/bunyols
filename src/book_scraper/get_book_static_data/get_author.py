@@ -9,4 +9,5 @@ def get_author(authors_data):
     author_info = requests.get("https://openlibrary.org" + data + ".json").content
     author_info = json.loads(author_info)
     author_name = author_info["name"]
+
     return author_name
