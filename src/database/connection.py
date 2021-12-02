@@ -1,3 +1,4 @@
+from typing import Collection
 from pymongo import MongoClient
 from pymongo.errors import ConfigurationError
 from .config import URI
@@ -12,10 +13,11 @@ def connection():
     except ConfigurationError:
         print("Connection failed")
     else:
-        database = client.library
+        database = client["bunyols-library"]
+        collection = database["catalog"]
         # serverStatusResult = database.command("serverStatus")
         # print(serverStatusResult)
-        return database
+        return collection
 
 
 connection()
