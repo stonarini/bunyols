@@ -15,9 +15,4 @@ def connection():
     else:
         database = client["bunyols-library"]
         collection = database["catalog"]
-        # serverStatusResult = database.command("serverStatus")
-        # print(serverStatusResult)
         return collection
-
-
-connection()

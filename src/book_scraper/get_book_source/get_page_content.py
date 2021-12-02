@@ -6,7 +6,6 @@ from .exceptions import StatusCodeException
 def get_page_content(URL):
     try:
         webpage = request_page(URL)
-
     except StatusCodeException as status_code:
         print(f"Error {status_code}\nIs {URL} correct?\n")
 
