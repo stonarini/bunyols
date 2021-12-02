@@ -3,6 +3,7 @@ from .get_book_source import get_book_source
 from .get_book_isbn import get_book_isbn
 from .get_book_dynamic_data import get_book_dynamic_data
 from .get_categories import get_categories
+from src.database import create_one
 
 
 def book_scraper(items):
@@ -16,4 +17,5 @@ def book_scraper(items):
         categories = get_categories(family, topics)
 
         book_data = {**static_data, **dynamic_data, **categories}
-        print(book_data)
+
+        create_one(book_data)
