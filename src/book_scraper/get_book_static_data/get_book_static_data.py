@@ -1,0 +1,16 @@
+from src.book_scraper.get_book_static_data.get_authors_names import get_authors_names
+from src.book_scraper.get_book_static_data.request_openlibary_page import (
+    request_openlibrary_page,
+)
+
+
+def get_book_static_data(isbn_address):
+    data = request_openlibrary_page(isbn_address)
+    book = {
+        "title": data["title"],
+        "author": get_authors_names(data["works"][0]["key"]),
+        "publisher": data["publishers"][0],
+        "ISBN_13": data["isbn_13"][0],
+        "publish_date": data["publish_date"],
+    }
+    return book
