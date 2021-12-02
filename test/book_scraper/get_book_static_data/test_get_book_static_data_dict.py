@@ -12,6 +12,7 @@ from src.book_scraper.get_book_source.exceptions import StatusCodeException
 def test_static_data_dict():
     assert isinstance(request_openlibrary_page("books/OL7353617M"), dict)
 
+
 @pytest.mark.test_get_book_static_data_keys
 def test_static_data_dict_keys():
     book = get_book_static_data("/isbn/9780590353427")
