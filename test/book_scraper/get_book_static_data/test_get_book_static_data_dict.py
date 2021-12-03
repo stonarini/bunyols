@@ -1,11 +1,8 @@
 import pytest
-from src.book_scraper.get_book_static_data.request_openlibary_page import (
+from src.book_scraper.get_book_data.get_book_static_data.request_openlibary_page import (
     request_openlibrary_page,
 )
-from src.book_scraper.get_book_static_data.get_book_static_data import (
-    get_book_static_data,
-)
-from src.book_scraper.get_book_source.exceptions import StatusCodeException
+from src.book_scraper.get_book_data.get_book_static_data import get_book_static_data
 
 
 @pytest.mark.test_static_data_is_dict
