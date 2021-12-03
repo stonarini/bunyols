@@ -1,5 +1,5 @@
 import pytest
-from src.book_scraper.get_book_dynamic_data import get_book_dynamic_data
+from src.book_scraper.get_book_data.get_book_dynamic_data import get_book_dynamic_data
 
 
 @pytest.mark.test_dynamic_data_input_is_valid

@@ -1,5 +1,5 @@
 import pytest
-from src.book_scraper.get_book_isbn import get_book_isbn
+from src.book_scraper.get_book_data.get_book_isbn import get_book_isbn
 from src.book_scraper.get_book_source import get_book_source
 
 
