@@ -1,0 +1,106 @@
+{
+    "collMod": "catalog",
+    "validator": {
+        "$jsonSchema": {
+            "type": "object",
+            "required": [
+                "title",
+                "author",
+                "publisher",
+                "ISBN_13",
+                "publish_date",
+                "price",
+                "reviews",
+                "categories"
+            ],
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "Book's Title"
+                },
+                "author": {
+                    "type": "array",
+                    "description": "List of authors of the book"
+                },
+                "publisher": {
+                    "type": "string",
+                    "description": "Entity that published the book"
+                },
+                "ISBN_13": {
+                    "type": "string",
+                    "description": "Unique book's identifier"
+                },
+                "publish_date": {
+                    "type": "string",
+                    "description": "Day when the book was published"
+                },
+                "price": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "value",
+                            "date"
+                        ],
+                        "properties": {
+                            "value": {
+                                "type": "string",
+                                "description": "Current price of the book"
+                            },
+                            "date": {
+                                "type": "string",
+                                "description": "The date of when the price was retrived"
+                            }
+                        }
+                    },
+                    "description": "Array of object contaning the book price and the day the price was retrived"
+                },
+                "reviews": {
+                    "type": "object",
+                    "required": [
+                        "total_reviews",
+                        "5",
+                        "4",
+                        "3",
+                        "2",
+                        "1"
+                    ],
+                    "properties": {
+                        "total_reviews": {
+                            "type": "number",
+                            "description": "Total number of reviews of the book"
+                        },
+                        "5": {
+                            "type": "number",
+                            "description": "Total number of 5 star reviews"
+                        },
+                        "4": {
+                            "type": "number",
+                            "description": "Total number of 4 star reviews"
+                        },
+                        "3": {
+                            "type": "number",
+                            "description": "Total number of 3 star reviews"
+                        },
+                        "2": {
+                            "type": "number",
+                            "description": "Total number of 2 star reviews"
+                        },
+                        "1": {
+                            "type": "number",
+                            "description": "Total number of 1 star reviews"
+                        }
+                    }
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "Category name"
+                    },
+                    "description": "Array of categories of the book"
+                }
+            }
+        }
+    }
+}
