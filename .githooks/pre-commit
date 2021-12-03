@@ -1,7 +1,7 @@
 #!/bin/sh
 staged_files=$(git diff --name-only --staged)
 for file_name in ${staged_files}; do
-    if [ "${file_name: -3}" = ".py" ]; then
+    if [ "${file_name: -3}" = ".py" && -f "${file_name}"]; then
 	python_files="${python_files} $file_name"
     fi
 done 
