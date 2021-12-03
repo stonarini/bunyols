@@ -1,19 +1,15 @@
-from .get_book_static_data import get_book_static_data
-from .get_book_source import get_book_source
-from .get_book_isbn import get_book_isbn
+from .get_book_static_data import  get_book_static_data
+from src.get_page_source import StatusCodeException
 from .get_book_dynamic_data import get_book_dynamic_data
-from .get_categories import get_categories
 
-
-def book_scraper(items):
-    for item in items:
-        URL, family, topics = item
-        content = get_book_source(URL)
-        ISBN = get_book_isbn(content)
-
-        static_data = get_book_static_data("/isbn/" + ISBN)
+def create_book_data(content, ISBN):
+    try:
+        static_data = get_book_static_data(ISBN)
+    except StatusCodeException as status_code:
+        print("Error", status_code, "- Book not added")
+    else:
         dynamic_data = get_book_dynamic_data(content)
-        categories = get_categories(family, topics)
+        return {**static_data, **dynamic_data}
 
-        book_data = {**static_data, **dynamic_data, **categories}
-        print(book_data)
+def update_book_data(content):
+    return get_book_dynamic_data(content)

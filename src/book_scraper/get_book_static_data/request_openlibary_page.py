@@ -1,5 +1,5 @@
 import json
-from src.book_scraper.get_book_source import request_page
+from src.get_page_source import request_page
 
 
 def request_openlibrary_page(page):
@@ -8,3 +8,4 @@ def request_openlibrary_page(page):
     webpage = request_page(URL)
     data = json.loads(webpage.content)
     return data
+

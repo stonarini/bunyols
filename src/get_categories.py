@@ -3,5 +3,5 @@ def get_categories(family, topics):
     if family:
         categories["family"] = family
     if topics:
-        categories["categories"] = categories
+        categories["categories"] = topics
     return categories
