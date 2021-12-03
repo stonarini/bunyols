@@ -8,4 +8,3 @@ def request_openlibrary_page(page):
     webpage = request_page(URL)
     data = json.loads(webpage.content)
     return data
-
