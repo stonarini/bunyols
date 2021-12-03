@@ -1,6 +1,6 @@
 import pytest
 from bs4 import BeautifulSoup
-from src.book_scraper.get_book_data.get_book_dynamic_data.get_book_price import (
+from src.book_scraper.get_book_dynamic_data.get_book_price import (
     get_book_price,
 )
 
