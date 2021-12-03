@@ -12,6 +12,12 @@ def test_isbn_is_string():
     assert isinstance(get_book_isbn(website), str)
 
 
-@pytest.mark.test_isbn_lenght
+@pytest.mark.test_isbn_length
 def test_isbn_lenght():
     assert len(get_book_isbn(website)) == 14 or 13
+
+@pytest.mark.test_isbn_serial
+def test_isbn_serial():
+    data  = get_book_isbn(website)
+    assert data[:3] in ['979', "978"]
+
