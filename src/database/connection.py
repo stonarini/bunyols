@@ -1,8 +1,6 @@
-from typing import Collection
 from pymongo import MongoClient
 from pymongo.errors import ConfigurationError
-from .config import URI
-from .create_collection import create_collection
+from .configuration import URI, create_collection
 
 
 def connection():
