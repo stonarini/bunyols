@@ -1,5 +1,5 @@
 from requests import ConnectionError, ConnectTimeout
-from src.get_book_source.request_page import request_page
+from src.get_page_source.request_page import request_page
 from .exceptions import StatusCodeException
 
 
