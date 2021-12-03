@@ -1,7 +1,5 @@
-from src.book_scraper.get_book_static_data.get_authors_names import get_authors_names
-from src.book_scraper.get_book_static_data.request_openlibary_page import (
-    request_openlibrary_page,
-)
+from .get_authors_names import get_authors_names
+from .request_openlibary_page import request_openlibrary_page
 
 
 def get_book_static_data(isbn_address):

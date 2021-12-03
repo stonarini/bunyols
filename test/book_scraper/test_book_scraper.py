@@ -8,11 +8,7 @@ links = [
     # ("https://www.amazon.com/Divina-Commedia-Inferno-Purgatorio-Paradiso/dp/B08P3SLT1S/", None, ["Classic"]),
     # ("https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124/", None, ["IT"]),
     # ("https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670/", None, ["IT"]),
-    (
-        "https://www.amazon.com/Automate-Boring-Stuff-Python-2nd/dp/1593279922/",
-        None,
-        ["IT"],
-    ),
+    # ("https://www.amazon.com/Automate-Boring-Stuff-Python-2nd/dp/1593279922/", None, ["IT"], )
 ]
 
 
