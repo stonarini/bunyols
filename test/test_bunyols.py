@@ -137,5 +137,5 @@ more_items = []
 
 
 def test_bunyols():
-    for item in items:
+    for item in more_items:
         bunyols(item)
