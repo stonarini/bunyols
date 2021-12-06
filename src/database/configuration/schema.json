@@ -13,7 +13,9 @@
                 "reviews",
                 "categories"
             ],
+            "additionalProperties": false,
             "properties": {
+                "_id": {},
                 "title": {
                     "type": "string",
                     "description": "Book's Title"
@@ -99,8 +101,13 @@
                         "description": "Category name"
                     },
                     "description": "Array of categories of the book"
+                },
+                "family": {
+                    "type": "string",
+                    "description": "Saga/Collection of which the book is part of"
                 }
             }
         }
-    }
+    },
+    "validationLevel": "strict"
 }

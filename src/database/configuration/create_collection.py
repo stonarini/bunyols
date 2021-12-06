@@ -3,7 +3,7 @@ import json
 
 
 def create_collection(database):
-    with open("src/database/schema.json", "r") as schema:
+    with open("src/database/configuration/schema.json", "r") as schema:
         database_schema = json.loads(schema.read())
 
     database_schema = OrderedDict(database_schema)
