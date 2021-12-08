@@ -1,0 +1,18 @@
+{{ define "main" }}
+<main>
+    <article>
+        {{ .Content }}
+    </article>
+
+    <aside>
+        <section>
+            <object data="/images/{{ .Params.ISBN13 }}/reviews.svg"
+                type="image/svg+xml"></object>
+        </section>
+        <section>
+            <object data="/images/{{ .Params.ISBN13 }}/prices.svg"
+                type="image/svg+xml"></object>
+        </section>
+    </aside>
+</main>
+{{ end }}
