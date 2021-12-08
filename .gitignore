@@ -1,0 +1,7 @@
+.pytest_cache/
+.tox/
+.vscode/
+__pycache__/
+venv/
+.prettierrc
+.hugo_build.lock
