@@ -1,0 +1,22 @@
+{{ define "main" }}
+<main>
+    {{ range .Pages }}
+        <div>
+            {{ if eq .Page.Kind "term"}}
+                <a href="/categories/{{ lower .Title }}">
+                    <h6>{{ .Title }}</h6>
+                </a>
+            {{ else }}
+                <a href="/bunyols/{{ .Params.ISBN13 }}">
+                    {{ if lt (.Title | strings.Count "") 15 }}
+                        <h4>{{ .Title }}</h4>
+                    {{ else }}
+                        <h5>{{ truncate 30 .Title }}</h5>
+                    {{ end }}
+                    <p>by {{ truncate 16 .Params.author }} </p>
+                </a>
+            {{ end }}
+        </div>
+    {{ end }}
+</main>
+{{ end }}
