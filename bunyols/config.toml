@@ -1,0 +1,6 @@
+baseURL = 'https//bunyols.xyz/'
+languageCode = 'en-us'
+title = 'Bunyols | Home'
+[taxonomies]
+  category = "categories"
+  saga = "sagas"
