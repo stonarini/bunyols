@@ -1,0 +1,15 @@
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/navs.css">
+
+    {{ if .IsHome }}
+        <link rel="stylesheet" href="/css/index.css">
+    {{ else if .IsPage }}
+        <link rel="stylesheet" href="/css/single.css">
+    {{ else }}
+        <link rel="stylesheet" href="/css/list.css">
+    {{ end }}
+
+    <title>Bunyols | {{ .Title }}</title>
+</head>
