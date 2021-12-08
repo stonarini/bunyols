@@ -1,0 +1,62 @@
+footer {
+  background-color: black;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-top: 1%;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: black;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-top: 1%;
+  box-sizing: border-box;
+  display: flex;
+}
+
+nav {
+  margin-left: 80%;
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right {
+  margin-left: 60%;
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  margin-left: 0;
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.6vw;
+}
+
+.left > span {
+  width: 80%;
+}
+
+.left > span + span {
+  width: 60%;
+}
+
+span {
+  padding: 2%;
+  flex: 1 1 auto;
+  text-align: center;
+  height: 100%;
+}
+
+span + span {
+  border-left: solid 2px white;
+}
