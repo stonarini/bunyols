@@ -11,15 +11,11 @@ def test_valid_input():
         "categories": ["IT"],
     }
 
-    create_frontmatter(book)
+    book["author"] = book["author"][0]
 
-    book_test = {}
-    with open("test/markdownify/create_frontmatter/test.md", "r") as test_file:
-        for line in test_file:
-            if line != "---":
-                colon = line.find(":")
-                book_test[line[:colon]] = line[colon+2:]
-                
-    assert book == book_test
+    frontmatter = create_frontmatter(book)
+
+    assert frontmatter == "---\ntitle: Code Complete\nauthor: Steve McConnell\nISBN_13: 9780735619678\ncategories: ['IT']\n---"
+
 
 
