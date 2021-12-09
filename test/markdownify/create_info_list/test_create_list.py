@@ -1,6 +1,7 @@
 import pytest
 from src.markdownify.create_info_list.create_list import create_list
 
+
 @pytest.mark.test_create_list
 def test_create_list():
     key = "ISBN_13"
