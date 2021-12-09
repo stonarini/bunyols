@@ -15,7 +15,7 @@ def test_valid_input():
 
     frontmatter = create_frontmatter(book)
 
-    assert frontmatter == "---\ntitle: Code Complete\nauthor: Steve McConnell\nISBN_13: 9780735619678\ncategories: ['IT']\n---"
-
-
-
+    assert (
+        frontmatter
+        == "---\ntitle: Code Complete\nauthor: Steve McConnell\nISBN_13: 9780735619678\ncategories: ['IT']\n---"
+    )
