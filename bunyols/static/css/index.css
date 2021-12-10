@@ -1,66 +1,88 @@
-.logo {
-    font-size: 2vw;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, "Dejavu Sans", Tahoma, sans-serif;
+    font-size: 2.2vw;
+    max-height: 100vh;
+  }
+  
+main {
+    margin: 1% 2%;
+    padding: 0 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+h1 {
+    margin: 0;
+    font-size: 5vw;
     text-align: center;
-}
-#bunyols {
-    margin-top: -4%;
-    margin-left: 2%;
-    font-size: 4vw;
-}
-#library {
-    margin-top: -5%;
-    margin-left: 10%;
-}
+    font-weight: normal;
+    display: block;
+}    
 
-
-#how {
-    font-size: 4vw;
-    margin-top: -4%;
-    margin-left: 2%;
-    margin-bottom: -3%;
-}
-#works {
+h2 {
+    margin:0;
     margin-left: 7%;
+    font-size: 3vw;
+    text-align: center;
+    font-weight: normal;
 }
 
-#cita {
-    width: 70vh;
-    height: 15vh;
+#the {
+    margin-top: 5%;
+    margin-bottom: -1%;;
+    margin-left: -5%;
+    font-size: 2vw;
+}
+
+#brake {
+    margin-top: 23%;
+}
+
+section + section {
+    width: 50%;
+    height: 15%;
     background-color: black;
     margin: 10% auto 13%;
-    position: relative
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#quote {
+p {
     color: white;
     font-size: 3.2vw;
 }
 
 
-#author {
+section > p + p {
     color: white;
     font-size: 1vw;
     float: right;
     position: absolute;
     bottom: 0;
     right: 0;
+    display: block;
     
 }
 
-#container {
-    display: flex;
-    justify-content: center;
+article p {
+    color: black;
+    font-size: 1vw;
+    padding: 5%;
 }
 
-.step-header {
+article h1 {
     font-size: 8vw;
     text-align: center;
     margin-bottom: -5%;
 }
 
-.step {
-    font-size: 1vw;
-    width: 15%;
+article {
+    display: flex;
+    justify-content: center;
     padding: 5%;
 }
-
