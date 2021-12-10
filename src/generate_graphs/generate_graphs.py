@@ -1,12 +1,18 @@
-from generate_graphs.generate_price_graph import generate_price_graph
-from generate_graphs.generate_reviews_graph import generate_reviews_graph
+import os
+from .generate_price_graph import generate_price_graph
+from .generate_reviews_graph import generate_reviews_graph
 
 
 def generate_graphs(path, reviews, price):
+    try:
+        os.makedirs(path)
+    except FileExistsError:
+        pass
 
-    prices = [item["value"] for item in price]
-    dates = [item["date"] for item in price]
-    generate_price_graph(path, dates, prices)
+    prices = [item["value"] for item in price if item["value"] != "Na"]
+    dates = [item["date"] for item in price if item["value"] != "Na"]
+    if prices:
+        generate_price_graph(path, dates, prices)
 
     total_reviews = reviews.pop("total_reviews")
     generate_reviews_graph(path, total_reviews, reviews)

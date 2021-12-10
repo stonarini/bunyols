@@ -32,3 +32,4 @@ def generate_price_graph(path, dates, prices):
 
     plt.title("Prices", fontsize=20)
     plt.savefig(path + "/price.svg")
+    plt.close()

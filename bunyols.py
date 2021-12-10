@@ -1,4 +1,4 @@
-from src import markdownify, get_page_source
+from src import markdownify, get_page_source, generate_graphs
 import src.database as database
 import src.utilities as utilities
 
@@ -20,14 +20,13 @@ def bunyols(item_list, path):
         ISBN = book["ISBN_13"]
         price, reviews = book.pop("price"), book.pop("reviews")
         markdown = markdownify(book)
-        utilities.write_to_file(path, f"{ISBN}.md", markdown)
+        utilities.write_to_file(path + "content/bunyols/", f"{ISBN}.md", markdown)
+        generate_graphs(path + "static/images/" + ISBN, reviews, price)
 
 
 if __name__ == "__main__":
     import sys
 
-    item_list = [
-        ("https://www.amazon.com/-/Aldous-Huxley/dp/0060850523/", (None, ["Fantasy"]))
-    ]
+    item_list = []
     path = sys.argv[1]
     bunyols(item_list, path)

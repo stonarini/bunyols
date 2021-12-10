@@ -131,6 +131,7 @@ items = [
         "https://www.amazon.com/Music-History-Questlove/dp/1419751433/",
         (None, ["Music"]),
     ),
+    ("https://www.amazon.com/-/Aldous-Huxley/dp/0060850523/", (None, ["Fantasy"])),
 ]
 
 more_items = []

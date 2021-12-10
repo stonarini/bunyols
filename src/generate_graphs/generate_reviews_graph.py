@@ -22,3 +22,4 @@ def generate_reviews_graph(path, total_reviews, reviews):
     plt.tick_params(axis=u"both", which=u"both", length=0)
 
     plt.savefig(path + "/reviews.svg")
+    plt.close()
