@@ -22,10 +22,12 @@ def bunyols(item_list, path):
         markdown = markdownify(book)
         utilities.write_to_file(path, f"{ISBN}.md", markdown)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     import sys
+
     item_list = [
-        ("https://www.amazon.com/-/Aldous-Huxley/dp/0060850523/", (None, ['Fantasy']))
+        ("https://www.amazon.com/-/Aldous-Huxley/dp/0060850523/", (None, ["Fantasy"]))
     ]
     path = sys.argv[1]
     bunyols(item_list, path)
