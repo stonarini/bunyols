@@ -3,4 +3,4 @@ languageCode = 'en-us'
 title = 'Bunyols | Home'
 [taxonomies]
   category = "categories"
-  saga = "sagas"
+  family = "family"
