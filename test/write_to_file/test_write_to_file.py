@@ -1,6 +1,5 @@
-from os import path
 import pytest
-from utilities.write_to_file import write_to_file
+from src.utilities.write_to_file import write_to_file
 
 
 @pytest.mark.test_write_to_file

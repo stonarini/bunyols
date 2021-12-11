@@ -1,6 +1,3 @@
-import pytest
-from src.bunyols import bunyols
-
 items = [
     (
         "https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670/",
@@ -133,10 +130,3 @@ items = [
     ),
     ("https://www.amazon.com/-/Aldous-Huxley/dp/0060850523/", (None, ["Fantasy"])),
 ]
-
-more_items = []
-
-
-def test_bunyols():
-    for item in more_items:
-        bunyols(item)
