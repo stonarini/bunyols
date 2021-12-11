@@ -1,4 +1,3 @@
-import database
 from .connection import connection
 
 
