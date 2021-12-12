@@ -6,6 +6,13 @@ body {
   min-height: 100vh;
   display: flex;
   flex-flow: column;
+  position: relative;
+}
+
+body::after {
+  content: "";
+  display: block;
+  height: 30px;
 }
 
 main {
@@ -13,7 +20,6 @@ main {
   padding: 0 2%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 0.59fr);
 }
 
 div > a {
@@ -45,4 +51,9 @@ h5 {
 h6 {
   font-size: 3vw;
   margin: 9.6% 0;
+}
+
+h7 {
+  font-weight: bold;
+  font-size: 2.5vw;
 }

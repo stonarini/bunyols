@@ -4,6 +4,7 @@ body {
   font-family: Verdana, "Dejavu Sans", Tahoma, sans-serif;
   font-size: 2.2vw;
   max-height: 100vh;
+  min-height: 100vh;
 }
 
 main {
@@ -30,7 +31,7 @@ h1:before {
   left: 0;
   bottom: 15%;
   height: 3px;
-  width: 30%; /* or 100px */
+  width: 30%;
   border-bottom: 3px solid black;
 }
 
@@ -47,20 +48,20 @@ h2:before {
   left: 0;
   bottom: 3%;
   height: 3px;
-  width: 30%; /* or 100px */
+  width: 30%;
   border-bottom: 3px solid black;
 }
 
 h3 {
   font-size: 3.3vw;
   margin-top: 0;
-  text-align: center;
+  margin-left: 3%;
   font-weight: normal;
 }
 
 ul {
-  font-size: 2.8vw;
-  margin: 0 10%;
+  font-size: 2.3vw;
+  margin: 10%;
   padding: 0;
   list-style: none;
   position: relative;
@@ -69,7 +70,7 @@ ul {
 ul:after {
   content: "";
   position: absolute;
-  right: 25%;
+  left: 0;
   bottom: -10%;
   height: 3px;
   width: 50%; /* or 100px */
@@ -78,6 +79,10 @@ ul:after {
 
 li {
   display: inline-block;
+}
+
+li strong {
+  font-size: 2.5vw;
 }
 
 aside {
