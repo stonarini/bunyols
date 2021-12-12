@@ -4,10 +4,8 @@ from .generate_reviews_graph import generate_reviews_graph
 
 
 def generate_graphs(path, reviews, price):
-    try:
+    if not os.path.exists(path):
         os.makedirs(path)
-    except FileExistsError:
-        pass
 
     prices = [item["value"] for item in price if item["value"] != "Na"]
     dates = [item["date"] for item in price if item["value"] != "Na"]
