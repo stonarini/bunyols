@@ -3,7 +3,13 @@ body {
   padding: 0;
   font-family: Verdana, "Dejavu Sans", Tahoma, sans-serif;
   font-size: 2.2vw;
-  max-height: 100vh;
+  position: relative;
+}
+
+body::after {
+  content: "";
+  display: block;
+  height: 30px;
 }
 
 main {
@@ -16,7 +22,7 @@ main {
 
 h1 {
   margin: 0;
-  font-size: 5vw;
+  font-size: 8vw;
   text-align: center;
   font-weight: normal;
   display: block;
@@ -24,17 +30,18 @@ h1 {
 
 h2 {
   margin: 0;
-  margin-left: 7%;
-  font-size: 3vw;
+  margin-left: 16%;
+  font-size: 5vw;
   text-align: center;
   font-weight: normal;
+  margin-top: -2.5%;
 }
 
 #the {
   margin-top: 5%;
-  margin-bottom: -1%;
-  margin-left: -20%;
-  font-size: 2vw;
+  margin-bottom: -0.7%;
+  margin-left: -32%;
+  font-size: 3vw;
 }
 
 #brake {
@@ -45,7 +52,7 @@ section + section {
   width: 50%;
   height: 15%;
   background-color: black;
-  margin: 10% auto 13%;
+  margin: 5% auto;
   position: relative;
   display: flex;
   align-items: center;
@@ -59,18 +66,18 @@ p {
 
 section > p + p {
   color: white;
-  font-size: 1vw;
   float: right;
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 5%;
   display: block;
+  font-size: 1.5vw;
 }
 
 article p {
   color: black;
-  font-size: 1vw;
-  padding: 5%;
+  font-size: 1.3vw;
+  padding: 15%;
 }
 
 article h1 {
