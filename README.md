@@ -1,34 +1,68 @@
 # Bunyols
 
 # Introduccion
-Este prouesasdjflkjsldkjfldsj
+
+**Bunyols Library** nace con la idea de presentar la información basica que cualquier libro debe de tener. Unicamente información representativa sobre el libro en si de una forma muy facil para el usuario. 
+
+# Historia
+
+Nuestro tran llamativo nombre surgio de un dia ir caminando por Palma de Mallorca y una mujer en un puesto de estos aceitosos y sabrosas frutas fritas regalarme una bolsa de 1kg totalmente gratis. No era capaz de comerme tal semejante cantidad de [*fruta de sarten*](https://es.wikipedia.org/wiki/Bu%C3%B1uelo) y asi fue como Samuele comio bunyols de camino al tren, dentro del tren y de desayuno al siguiente dia. De nada Samu, atentamente Eze.
 
 # Metodologia
-Para la mayor parte del proyecto hemos utilizado una metodologia incremental, donde decidiamos el incremento y una vez acabado, analizavamos resultados y creavamos un nuevo incremento.
 
-Decidimos utilizar otra metodologia para el desarrollo del estilo de la pagina. Aqui hemos seguido un modelo de prototipado, donde hemos disenado diferentes prototipos de la pagina en diferentes formas (papel, software grafico, etc...). Una vez que nos gustaba el diseno, lo hemos recreado con HTML y CSS planos, y como ultimo paso lo hemos implementado en HUGO.
+Para la parte logica de la aplicación se ha utilizado una **metodologia incremental** utilizando la filosofia de construir funcionalidades del programa, analizandolo y construyendo incrementos donde uno unido al otro tiene el fin de construir un uso funcional de la aplicación.
+
+Para la parte de diseño web se ha utilizado una **metodologia prototipada** donde hemos diseñado diferentes prototipos de la pagina en diferentes fomatos *(papel y [software grafico](https://www.figma.com/)).* Una vez elegido el diseño, se recreo en HTML y CSS pasandolo por ultimo a **hugo**.
+
 
 # Analisis
 
+ ## Arquitectura
 
-## Tecnologias Eligidas
+ ![architecture](images/architecture.png)
 
-Book_Scraper:
-- **Beautiful Soup 4**: utilizada para procesar paginas html y sacar contenido de ellas
+- **Presentation layer**
+    - **nginx/hugo** el primero es un software de servidor web open source utilizado para servir archivos HTML que construira la segunda tecnologia.
 
-Get_Page_Source:
-- **requests**: utilizada para hacer peticiones a determinadas paginas
-- **fake-headers**: usada para generar una cabecera aleatoria para masquerar las diferentes peticiones y que no vengan bloqueadas
+- **Service layer** 
+  - **bunyols.py** programa principal.
 
-Database:
-- **pymongo**: usada para establecer la coneccion con la base de datos
-  
-Generate_Graphs:
-- **matplotlib**: utilizada para generar graficos de diferentes valores de los libros 
+- **Business layer**
+  - **get_page_source** encargado de hacer peticiones y general el contenido parseado de la pagina web solicitada.
+  - **book_scraper** encargado de obtener los datos estaticos y dinamicos de la pagina web en la que se solicite la accion.
+  - **markdownify** encargado de crear el *frontmatter* utilizado por Hugo asi de generar la estructura de los items devueltros por `book_scrapper`.
+  - **generate_graphs** encargado utilizando los datos dinamicos proporcionados por `get_page_source` de generar graficos con el numero de reviews y cambios en el precio que seran presentados en la pagina final del libro.
 
-Testing:
-- **pytest**: usada para ejecutar los casos tests de todos los componentes
-- **coverage**: usada en conjunto con pytest para verificar el porcentaje de lineas ejecutadas
+ - **Data layer**
+    - **database** todo lo relacionado a acciones hechas sobre y con la base de datos **MongoDB** con instrucciones de la libreria `pymongo.`
+
+
+## Tecnologias y herramientas
+
+- **[Python](https://docs.python.org/3/)**
+  - **Beautiful Soup 4** es una biblioteca de Python para extraer datos de archivos HTML y XML dejando a elegir el parser para proporcional formas de navegacion, busqueda y modificación. [Referencia](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+  - **requests** es una libreria HTTP para Python utilizada para realizar peticiones HTTP y hacermas mas amigables.
+    [Referencia](https://docs.python-requests.org/en/latest/)
+  - **fake-headers** usada para generar una cabecera aleatoria para enmascarar diferentes peticiones y que no vengan bloqueadas.
+ [Referencia](https://pypi.org/project/fake-headers/)
+   - **matplotlib** es una libreria para crear animaciones estaticas y visualizaciones interactivas en Python. [Referencia](https://matplotlib.org/stable/)
+  - **pytest** es un framework utilizado para escribir casos test y poner aprueba aplicaciones y librerias. [Referencia](https://docs.pytest.org/en/6.2.x/)
+  - **coverage** junto a *pytest* es una herramienta para medir el codigo cubierto de un prograna. Monitoriza el programa informando de que cantidad de codigo ha sido ejecutada. [Referencia](https://coverage.readthedocs.io/en/6.2/)
+
+
+
+- **[MongoDB](https://docs.mongodb.com/)**
+  - **pymongo** es una libreria que contiene herramientas para trabajar con [MongoDB](http://www.mongodb.org/). [Referencia](https://pymongo.readthedocs.io/en/stable/)
+- **[Hugo](https://gohugo.io/documentation/)**
+  - *Framework* utilizado para la creacion de sitios webs estaticos.
+- **HTML5 y CSS**
+  - Estilizacion de la parte web junto a hugo.
+- **[Git](https://git-scm.com/docs)**
+  - Realización de cambios y subida de versiones modificadas independientes, no sobrescribiendo en el archivo original.
+- **Markdown**
+  - Lenguaje de marcado ligero utilizado en **gohugo**
+
+
 
 
 # Diseno
