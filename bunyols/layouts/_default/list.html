@@ -4,11 +4,15 @@
         <div>
             {{ if eq .Page.Kind "term"}}
                 <a href="{{ with .File }}{{ .Dir }}{{ end }}{{ (lower .Title) | urlize }}">
-                    <h6>{{ truncate 15 .Title }}</h6>
+                    {{ if lt (.Title | strings.Count "") 10 }}
+                        <h6>{{ .Title }}</h6>
+                    {{ else }}
+                        <h7>{{ truncate 17 .Title }}</h7>
+                    {{ end }}
                 </a>
             {{ else }}
                 <a href="/bunyols/{{ .Params.ISBN_13 }}">
-                    {{ if lt (.Title | strings.Count "") 15 }}
+                    {{ if lt (.Title | strings.Count "") 13 }}
                         <h4>{{ .Title }}</h4>
                     {{ else }}
                         <h5>{{ truncate 30 .Title }}</h5>
