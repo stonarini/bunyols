@@ -1,75 +1,98 @@
-# Bunyols
+# The Bunyols Library
 
-# Introduccion
+# Tabla de contenidos
 
-**Bunyols Library** nace con la idea de presentar la información basica que cualquier libro debe de tener. Unicamente información representativa sobre el libro en si de una forma muy facil para el usuario. 
+- [The Bunyols Library](#the-bunyols-library)
+- [Tabla de contenidos](#tabla-de-contenidos)
+- [Introducción](#introducción)
+- [Historia](#historia)
+- [Descripción tecnica](#descripción-tecnica)
+  - [Arquitectura de la aplicacón](#arquitectura-de-la-aplicacón)
+  - [Tecnologías y herramientas](#tecnologías-y-herramientas)
+- [Diagrama de componentes](#diagrama-de-componentes)
+  - [Componentes](#componentes)
+  - [Esquema MongoDB](#esquema-mongodb)
+  - [Ejemplo Real](#ejemplo-real)
+- [Metodología](#metodología)
+- [Comparación Temporal](#comparación-temporal)
+  - [Clockify](#clockify)
+  - [Justificación temporal](#justificación-temporal)
+- [Conclusiones](#conclusiones)
+  - [Posibles mejoras](#posibles-mejoras)
+- [Dificultades](#dificultades)
+# Introducción
+
+**Bunyols Library** nace con la idea de presentar la información básica que cualquier libro debe de tener. Únicamente información representativa sobre el libro en sí de una forma muy fácil para el usuario.
 
 # Historia
 
-Nuestro tran llamativo nombre surgio de un dia ir caminando por Palma de Mallorca y una mujer en un puesto de estos aceitosos y sabrosas frutas fritas regalarme una bolsa de 1kg totalmente gratis. No era capaz de comerme tal semejante cantidad de [*fruta de sarten*](https://es.wikipedia.org/wiki/Bu%C3%B1uelo) y asi fue como Samuele comio bunyols de camino al tren, dentro del tren y de desayuno al siguiente dia. De nada Samu, atentamente Eze.
-
-# Metodologia
-
-Para la parte logica de la aplicación se ha utilizado una **metodologia incremental** utilizando la filosofia de construir funcionalidades del programa, analizandolo y construyendo incrementos donde uno unido al otro tiene el fin de construir un uso funcional de la aplicación.
-
-Para la parte de diseño web se ha utilizado una **metodologia prototipada** donde hemos diseñado diferentes prototipos de la pagina en diferentes fomatos *(papel y [software grafico](https://www.figma.com/)).* Una vez elegido el diseño, se recreo en HTML y CSS pasandolo por ultimo a **hugo**.
+Nuestro tan llamativo nombre surgió de un día ir caminando por Palma de Mallorca y una mujer en un puesto de estos aceitosos y sabrosas frutas fritas regalarme una bolsa de 1kg totalmente gratis. No era capaz de comerme tal semejante cantidad de [*fruta de sartén*](https://es.wikipedia.org/wiki/Bu%C3%B1uelo) y así fue como Samuele comió bunyols de camino al tren, dentro del tren y de desayuno al siguiente día. De nada Samu, atentamente Eze.
 
 
-# Analisis
+# Descripción tecnica
 
- ## Arquitectura
+ ## Arquitectura de la aplicacón
 
  ![architecture](images/architecture.png)
 
 - **Presentation layer**
-    - **nginx/hugo** el primero es un software de servidor web open source utilizado para servir archivos HTML que construira la segunda tecnologia.
+  - **nginx/hugo** el primero es un software de servidor web open source utilizado para servir archivos HTML que construirá la segunda tecnología.
 
-- **Service layer** 
+- **Service layer**
   - **bunyols.py** programa principal.
 
 - **Business layer**
-  - **get_page_source** encargado de hacer peticiones y general el contenido parseado de la pagina web solicitada.
-  - **book_scraper** encargado de obtener los datos estaticos y dinamicos de la pagina web en la que se solicite la accion.
-  - **markdownify** encargado de crear el *frontmatter* utilizado por Hugo asi de generar la estructura de los items devueltros por `book_scrapper`.
-  - **generate_graphs** encargado utilizando los datos dinamicos proporcionados por `get_page_source` de generar graficos con el numero de reviews y cambios en el precio que seran presentados en la pagina final del libro.
+  - **get_page_source** encargado de hacer peticiones y general el contenido parseado de la página web solicitada.
+  - **book_scraper** encargado de obtener los datos estáticos y dinámicos de la página web en la que se solicite la acción.
+  - **markdownify** encargado de crear el *frontmatter* empleado por Hugo así de generar la estructura de los items devueltos al hacer peticiones a la base de datos.
+  - **generate_graphs** encargado usando los datos dinámicos precios y reviews solicitados a la base de datos de realizar gráficos.
 
- - **Data layer**
-    - **database** todo lo relacionado a acciones hechas sobre y con la base de datos **MongoDB** con instrucciones de la libreria `pymongo.`
+- **Data layer**
+  - **database** todo lo relacionado a acciones hechas sobre y con la base de datos **MongoDB** con instrucciones de la librería 'pymongo.'
 
-
-## Tecnologias y herramientas
+## Tecnologías y herramientas
 
 - **[Python](https://docs.python.org/3/)**
-  - **Beautiful Soup 4** es una biblioteca de Python para extraer datos de archivos HTML y XML dejando a elegir el parser para proporcional formas de navegacion, busqueda y modificación. [Referencia](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-  - **requests** es una libreria HTTP para Python utilizada para realizar peticiones HTTP y hacermas mas amigables.
-    [Referencia](https://docs.python-requests.org/en/latest/)
+  - **Beautiful Soup 4** es una biblioteca de Python para extraer datos de archivos HTML y XML dejando a elegir el parser para proporcional formas de navegación, búsqueda y modificación. [Referencia](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+  - **requests** es una librería HTTP para Python usada para efectuar peticiones HTTP y hacerlas más amigables.
+  [Referencia](https://docs.python-requests.org/en/latest/)
   - **fake-headers** usada para generar una cabecera aleatoria para enmascarar diferentes peticiones y que no vengan bloqueadas.
- [Referencia](https://pypi.org/project/fake-headers/)
-   - **matplotlib** es una libreria para crear animaciones estaticas y visualizaciones interactivas en Python. [Referencia](https://matplotlib.org/stable/)
-  - **pytest** es un framework utilizado para escribir casos test y poner aprueba aplicaciones y librerias. [Referencia](https://docs.pytest.org/en/6.2.x/)
-  - **coverage** junto a *pytest* es una herramienta para medir el codigo cubierto de un prograna. Monitoriza el programa informando de que cantidad de codigo ha sido ejecutada. [Referencia](https://coverage.readthedocs.io/en/6.2/)
-
-
+  [Referencia](https://pypi.org/project/fake-headers/)
+  - **matplotlib** es una librería para crear animaciones estáticas y visualizaciones interactivas en Python. [Referencia](https://matplotlib.org/stable/)
+  - **pytest** es un framework usado para escribir casos test y poner aprueba aplicaciones y librerías. [Referencia](https://docs.pytest.org/en/6.2.x/)
+  - **coverage** junto a *pytest* es una herramienta para medir el código cubierto de un programa. Monitoriza el programa informando de que cantidad de código ha sido ejecutada. [Referencia](https://coverage.readthedocs.io/en/6.2/)
 
 - **[MongoDB](https://docs.mongodb.com/)**
-  - **pymongo** es una libreria que contiene herramientas para trabajar con [MongoDB](http://www.mongodb.org/). [Referencia](https://pymongo.readthedocs.io/en/stable/)
+  - **pymongo** es una librería que contiene herramientas para trabajar con [MongoDB](http://www.mongodb.org/). [Referencia](https://pymongo.readthedocs.io/en/stable/)
 - **[Hugo](https://gohugo.io/documentation/)**
-  - *Framework* utilizado para la creacion de sitios webs estaticos.
+  - *Framework* empleado para la creación de sitios webs estáticos.
 - **HTML5 y CSS**
-  - Estilizacion de la parte web junto a hugo.
+  - Estilización de la parte web junto a hugo.
 - **[Git](https://git-scm.com/docs)**
   - Realización de cambios y subida de versiones modificadas independientes, no sobrescribiendo en el archivo original.
 - **Markdown**
   - Lenguaje de marcado ligero utilizado en **gohugo**
 
+# Diagrama de componentes
 
+![components](/images/components.png)
 
+## Componentes
 
-# Diseno
-## Mapa Conceptual
+- **`utilities`** package que alberga *herramientas* que devuelven una información utilizada por otros módulos o realizan una tarea en específico.
 
-## Esquema de la Base de Datos
-### Esquema MongoDB
+- **`book_scraper`** package que alberga todo lo relacionado con el web scraper en sí, dentro de este existen 2 packages más 'get_book_dynamic_data' y 'get_book_static_data' que scrapean la información establecida dentro de sus módulos.
+
+- **`get_page_source`** package que alberga aquellos métodos usados para ejecutar peticiones a una página y devolver el contenido que después será scrapeado por 'book_scraper'.
+
+- **`markdownify`** package que alberga todo lo empleado para generar estructuras markdown así como lo necesario para 'Hugo'.
+
+- **`generate_graphs`** package que alberga aquellos métodos empleados para generar gráficos mediante los datos 'precios' y 'reyes' contenidos en la base de datos.
+
+- **`database`** package donde se sitúa todo lo relacionado con el manejo de la base de datos, en resumen, sus métodos CRUD.
+
+## Esquema MongoDB
+
 ```json
 {
     "title": {
@@ -152,8 +175,7 @@ Para la parte de diseño web se ha utilizado una **metodologia prototipada** don
     }
 }
 ```
-
-### Ejemplo Real
+## Ejemplo Real
 ```json
 {
     "title": "Code Complete",
@@ -179,23 +201,34 @@ Para la parte de diseño web se ha utilizado una **metodologia prototipada** don
 }
 ```
 
-## Pruebas a Realizar
+# Metodología
 
-# Implementacion
+Para la parte lógica de la aplicación se ha usado una **metodología incremental** utilizando la filosofía de construir funcionalidades del programa, analizándolo y construyendo incrementos donde uno unido al otro tiene el fin de construir un uso funcional de la aplicación.
 
-# Pruebas
+Para la parte de diseño web se ha usado una **metodología prototipada** donde hemos diseñado diferentes prototipos de la página en diferentes formatos *(papel y [software gráfico](https://www.figma.com/)).* Una vez elegido el diseño, se recreó en HTML y CSS pasándolo por último a **hugo**.
 
-# Comparacion Temporal
+# Comparación Temporal
 
 ## Clockify
-Para tener bajo control el tiempo utilizado y para poder comparar nuestras estimaciones hemos usado la herramienta Clockify con las siguentes etiquetas:
-- Scraper: Para los modulos *book_scraper* y *get_page_source*
-- Database: Para el modulo *database* y la creacion del esquema y validacion de la base de datos
-- Web Design: Para el prototipado de la pagina web (tanto diseno como implementacion HTML)
-- Hugo: Para la configuracion de *Hugo* y para la implementacion del prototipo
-- Markdown: Para los modulos *markdownify* y *generate_graphs*
-- Docs: Para el tiempo usado para escribir esta documentacion
-- Cofiguracion: Para la configuracion de git y para la configuracion de herramientas y scripts (git-hooks, tox, pytest, etc...)
-### 
+Para tener bajo control el tiempo utilizado y para poder comparar nuestras estimaciones hemos usado la herramienta Clockify con las siguientes etiquetas:
+
+- **Scraper:** Para los módulos 'book_scraper' y 'get_page_source'.
+- **Database:** Para el módulo 'database' y la creación del esquema y validación de la base de datos
+- **Web Design:** Para el prototipado de la página web (tanto diseño como implementación HTML y CSS)
+- **Hugo:** Para la configuración de 'Hugo' y para la implementación del prototipo realizado en 'Web Design'
+- **Markdown:** Para los módulos 'markdownify' y 'generate_graphs'
+- **Docs:** Para el tiempo usado para escribir esta documentación
+- **Configuración:** Para la (se ha alcanzado el límite de sugerencias) de git y para la configuración de herramientas y scripts (git-hooks, tox, pytest, etc...)
+  
+![clockify](images/clockify.png)
+
+## Justificación temporal
+Teniendo el gráfico presente la tarea en la que más hemos invertido tiempo ha sido en la creación de nuestro propio scraper, teníamos la opción de usar el scraper ya hecho por nuestros tutores de segundo, pero prescindimos de este al no ser posible adaptarlo del todo a los requisitos que queríamos.
+
+Invertimos así el tiempo teniendo en mente que la lógica detrás de 'markdownify' no nos iba a ocupar el tiempo que sabíamos la creación del scraper desde cero sí.
+
+# Conclusiones
+
+## Posibles mejoras
 
 # Dificultades
