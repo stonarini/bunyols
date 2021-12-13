@@ -2,7 +2,7 @@ import pytest
 from src.markdownify.create_frontmatter import create_frontmatter
 
 
-@pytest.mark.test_valid_input
+@pytest.mark.test_frontmatter_output
 def test_valid_input():
     book = {
         "title": "Code Complete",
