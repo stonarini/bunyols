@@ -2,7 +2,7 @@ import pytest
 from src.markdownify import markdownify
 
 
-@pytest.mark.test_markdownify
+@pytest.mark.test_markdownify_output
 def test_markdownify():
     book = {
         "title": "Clean Code",
