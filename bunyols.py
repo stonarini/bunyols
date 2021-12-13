@@ -26,7 +26,16 @@ def bunyols(item_list, path):
 
 if __name__ == "__main__":
     import sys
-
-    item_list = []
-    path = sys.argv[1]
-    bunyols(item_list, path)
+    import os
+    from items import items
+    
+    if len(sys.argv) < 2:
+        print("No path provided")
+    elif len(sys.argv) > 2:
+        print("Too many arguments")
+    else:
+        path = sys.argv[1]
+        if os.path.isdir(path):
+            bunyols(items, path)
+        else:
+            print("Error path does not exist or it's not a directory")
