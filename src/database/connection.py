@@ -5,8 +5,6 @@ from .configuration import URI, create_collection
 
 def connection():
 
-    assert isinstance(URI, str), "URI need to be a string type object"
-
     try:
         client = MongoClient(URI)
     except ConfigurationError:
