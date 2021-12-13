@@ -6,6 +6,9 @@
 - [Tabla de contenidos](#tabla-de-contenidos)
 - [Introducción](#introducción)
 - [Historia](#historia)
+- [Manual](#manual)
+  - [Pre-requisitos](#pre-requisitos)
+  - [Instalación](#instalación)
 - [Descripción tecnica](#descripción-tecnica)
   - [Arquitectura de la aplicacón](#arquitectura-de-la-aplicacón)
   - [Tecnologías y herramientas](#tecnologías-y-herramientas)
@@ -20,6 +23,8 @@
 - [Conclusiones](#conclusiones)
   - [Posibles mejoras](#posibles-mejoras)
 - [Dificultades](#dificultades)
+
+
 # Introducción
 
 **Bunyols Library** nace con la idea de presentar la información básica que cualquier libro debe de tener. Únicamente información representativa sobre el libro en sí de una forma muy fácil para el usuario.
@@ -27,6 +32,47 @@
 # Historia
 
 Nuestro tan llamativo nombre surgió de un día ir caminando por Palma de Mallorca y una mujer en un puesto de estos aceitosos y sabrosas frutas fritas regalarme una bolsa de 1kg totalmente gratis. No era capaz de comerme tal semejante cantidad de [*fruta de sartén*](https://es.wikipedia.org/wiki/Bu%C3%B1uelo) y así fue como Samuele comió bunyols de camino al tren, dentro del tren y de desayuno al siguiente día. De nada Samu, atentamente Eze.
+
+# Manual
+
+## Pre-requisitos
+  - `Git` 
+  - `Python3`
+  - `pip3`
+  - `fake-headers`
+  - `bs4`
+  - `lxml`
+  - `pymongo`
+  - `matplotlib` 
+
+## Instalación
+
+Se recomienda utilizar en `virtualenv` para instalar todas las dependencias utilizadas por el programa. En [Windows](https://docs.python.org/es/3.8/library/venv.html) lo puedes instalar siguiendo su guia. En **Linux** ejecuta la siguiente instrucción.
+
+```
+$ sudo apt-get install python3-venv
+```
+
+Crea un directorio y situate dentro de el. Aqui dentro residira todo el codigo de la aplicacion.
+
+```
+$ mkdir ./bunyols-library
+$ cd bunyols-library
+```
+
+Ya dentro del directorio clona el repositorio.
+
+```
+$ git clone git@github.com:stonarini/Bunyols.git
+```
+Se preparo un archivo `setup` que activara el entorno virtual y descargara las dependencias necesarias por ti, ejecutalo.
+```
+$ ./setup.sh
+```
+Cuando se quiera entrar en el entorno virtual sin pasar por `./setup.sh`, ejecuta:
+```
+$ source venv/bin/activate
+```
 
 
 # Descripción tecnica
@@ -218,7 +264,7 @@ Para tener bajo control el tiempo utilizado y para poder comparar nuestras estim
 - **Hugo:** Para la configuración de 'Hugo' y para la implementación del prototipo realizado en 'Web Design'
 - **Markdown:** Para los módulos 'markdownify' y 'generate_graphs'
 - **Docs:** Para el tiempo usado para escribir esta documentación
-- **Configuración:** Para la (se ha alcanzado el límite de sugerencias) de git y para la configuración de herramientas y scripts (git-hooks, tox, pytest, etc...)
+- **Configuración:** Para configuración de git y para la configuración de herramientas y scripts (git-hooks, tox, pytest, etc...)
   
 ![clockify](images/clockify.png)
 
