@@ -9,14 +9,15 @@
 - [Manual](#manual)
   - [Pre-requisitos](#pre-requisitos)
   - [Instalación](#instalación)
+  - [Uso](#uso)
+- [Metodología](#metodología)
 - [Descripción tecnica](#descripción-tecnica)
   - [Arquitectura de la aplicacón](#arquitectura-de-la-aplicacón)
   - [Tecnologías y herramientas](#tecnologías-y-herramientas)
-- [Diagrama de componentes](#diagrama-de-componentes)
+- [Diseño](#diseño)
   - [Componentes](#componentes)
-  - [Esquema MongoDB](#esquema-mongodb)
+  - [Esquema BBDD](#esquema-bbdd)
   - [Ejemplo Real](#ejemplo-real)
-- [Metodología](#metodología)
 - [Comparación Temporal](#comparación-temporal)
   - [Clockify](#clockify)
   - [Justificación temporal](#justificación-temporal)
@@ -31,7 +32,9 @@
 
 # Historia
 
-Nuestro tan llamativo nombre surgió de un día ir caminando por Palma de Mallorca y una mujer en un puesto de estos aceitosos y sabrosas frutas fritas regalarme una bolsa de 1kg totalmente gratis. No era capaz de comerme tal semejante cantidad de [*fruta de sartén*](https://es.wikipedia.org/wiki/Bu%C3%B1uelo) y así fue como Samuele comió bunyols de camino al tren, dentro del tren y de desayuno al siguiente día. De nada Samu, atentamente Eze.
+Nuestro tan llamativo nombre surgió de un día ir caminando por Palma de Mallorca y una mujer en un puesto de estos aceitosos y sabrosas frutas fritas regalarme una bolsa de 1kg totalmente gratis. No era capaz de comerme tal semejante cantidad de [*fruta de sartén*](https://es.wikipedia.org/wiki/Bu%C3%B1uelo) y así fue como Samuele comió bunyols de camino al tren, dentro del tren y de desayuno al siguiente día. 
+
+- *Con cariño, Eze*
 
 # Manual
 
@@ -73,7 +76,32 @@ Cuando se quiera entrar en el entorno virtual sin pasar por `./setup.sh`, ejecut
 ```
 $ source venv/bin/activate
 ```
+## Uso
 
+**1. Formatea los elementos de la lista de la siguiente manera**.
+```
+("URL", ("Familia", ["Tematica"]))
+```
+- `URL` referencia a la pagina del libro en Amazon.
+- `Familia` referencia al conjunto de libros que pertenece el actual.
+- `Tematica` referencia al tema del libro.
+  
+**Un ejemplo**
+```
+("https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882", ("Robert C Martin Series", ["IT"])
+```
+**2.Ejecuta `bunyols.py` encima del archivo donde esten todos tus libros a scrapear definiendo la carpeta de `Hugo` donde se creara el contenido**.
+
+```
+python3 bunyols.py [CARPETA]/
+```
+- `CARPETA` hace referencia al directorio de `Hugo`.
+
+# Metodología
+
+Para la parte lógica de la aplicación se ha usado una **metodología incremental** utilizando la filosofía de construir funcionalidades del programa, analizándolo y construyendo incrementos donde uno unido al otro tiene el fin de construir un uso funcional de la aplicación.
+
+Para la parte de diseño web se ha usado una **metodología prototipada** donde hemos diseñado diferentes prototipos de la página en diferentes formatos *(papel y [software gráfico](https://www.figma.com/)).* Una vez elegido el diseño, se recreó en HTML y CSS pasándolo por último a **hugo**.
 
 # Descripción tecnica
 
@@ -119,7 +147,7 @@ $ source venv/bin/activate
 - **Markdown**
   - Lenguaje de marcado ligero utilizado en **gohugo**
 
-# Diagrama de componentes
+# Diseño
 
 ![components](/images/components.png)
 
@@ -133,11 +161,11 @@ $ source venv/bin/activate
 
 - **`markdownify`** package que alberga todo lo empleado para generar estructuras markdown así como lo necesario para 'Hugo'.
 
-- **`generate_graphs`** package que alberga aquellos métodos empleados para generar gráficos mediante los datos 'precios' y 'reviews' contenidos en la base de datos.
+- **`generate_graphs`** package que alberga aquellos métodos empleados para generar gráficos mediante los datos 'precios' y 'reyes' contenidos en la base de datos.
 
 - **`database`** package donde se sitúa todo lo relacionado con el manejo de la base de datos, en resumen, sus métodos CRUD.
 
-## Esquema MongoDB
+## Esquema BBDD
 
 ```json
 {
@@ -247,12 +275,6 @@ $ source venv/bin/activate
 }
 ```
 
-# Metodología
-
-Para la parte lógica de la aplicación se ha usado una **metodología incremental** utilizando la filosofía de construir funcionalidades del programa, analizándolo y construyendo incrementos donde uno unido al otro tiene el fin de construir un uso funcional de la aplicación.
-
-Para la parte de diseño web se ha usado una **metodología prototipada** donde hemos diseñado diferentes prototipos de la página en diferentes formatos *(papel y [software gráfico](https://www.figma.com/)).* Una vez elegido el diseño, se recreó en HTML y CSS pasándolo por último a **hugo**.
-
 # Comparación Temporal
 
 ## Clockify
@@ -277,4 +299,10 @@ Invertimos así el tiempo teniendo en mente que la lógica detrás de 'markdowni
 
 ## Posibles mejoras
 
+- Estamos trabajando en la implementacion de [Typer](https://typer.tiangolo.com/) para poder realizar una inserción nueva de libros desde la linea de comandos.
+- Estamos trabajando en la implementación de [Typer](https://typer.tiangolo.com/) para poder manejar funciones relacionadas al modulo de base de datos desde la linea de comandos.
+
 # Dificultades
+
+No hemos experimentado dificultades notorias mas haya que desarrollar el modulo `book-scraper` desde cero, pues el proyecto no consistia directamente en esta funcionalidad pero se necesitaba si queriamos crear el proyecto a nuestros gustos personales.
+
