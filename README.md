@@ -12,8 +12,11 @@
   - [Uso](#uso)
 - [Metodología](#metodología)
 - [Descripción tecnica](#descripción-tecnica)
+  - [Partes Interesadas y Requisitos Funcionales/No Funcionales](#partes-interesadas-y-requisitos-funcionalesno-funcionales)
+  - [Diagrama de Casos de Uso](#diagrama-de-casos-de-uso)
   - [Arquitectura de la aplicacón](#arquitectura-de-la-aplicacón)
-  - [Tecnologías y herramientas](#tecnologías-y-herramientas)
+  - [Posibles Tecnologias](#posibles-tecnologias)
+  - [Tecnologías y Herramientas Eligidas](#tecnologías-y-herramientas-eligidas)
 - [Diseño](#diseño)
   - [Componentes](#componentes)
   - [Esquema BBDD](#esquema-bbdd)
@@ -29,6 +32,13 @@
 # Introducción
 
 **Bunyols Library** nace con la idea de presentar la información básica que cualquier libro debe de tener. Únicamente información representativa sobre el libro en sí de una forma muy fácil para el usuario.
+
+En este proyecto usaremos [*MongoDB*](https://www.mongodb.com) como base de datos a travez del servicio Mongo Atlas. 
+Para la logica de la aplicacion usaremos el lenguage de programacion [*Python*](https://www.python.org) (version 3.9). 
+Para la conversion y creacion de el sitio web estatico usaremos el SSG [*Hugo*](https://gohugo.io). 
+Y por Ultimo, usaremos el servidor web [*Nginx*](https://www.nginx.com) para servir nuestro sitio web.
+
+![simplediagram](images/technologies.png)
 
 # Historia
 
@@ -105,6 +115,30 @@ Para la parte de diseño web se ha usado una **metodología prototipada** donde 
 
 # Descripción tecnica
 
+ ## Partes Interesadas y Requisitos Funcionales/No Funcionales
+ Como parte interesada solo tenemos a lo que vienen siendo los empleados de la empresa que necesitan visualizar y gestionar los elementos de 
+ la base de datos con nuestra aplicacion.  Podemos denominar esta parte interesada como *Empleado*.
+
+ **Requisitos Funcionales**
+ - RF_Epleado_01: Visualizar Elementos (R)
+
+ - RF_Epleado_02: Crear Elementos (C)
+
+ - RF_Epleado_03: Modificar Elementos (U)
+
+ - RF_Epleado_04: Borrar Elementos (D)
+
+ **Requisitos No Funcionales**
+ - RnF_01: Recollecion Automatica de Datos
+   - Al crear un nuevo elemento se usara un web scraper para recolecctar automaticamente datos sobre ese elemento.
+ - RnF_02: Catalogacion de Elementos
+   - A cada elemento se asignaran categorias que serviran para agruparlos
+ - RnF_03: Creacion de Graficos
+   - Se generaran automaticamente graficos al renderizar la pagina
+
+ ## Diagrama de Casos de Uso
+
+ ![Use Cases](images/usecases.png)
  ## Arquitectura de la aplicacón
 
  ![architecture](images/architecture.png)
@@ -124,7 +158,13 @@ Para la parte de diseño web se ha usado una **metodología prototipada** donde 
 - **Data layer**
   - **database** todo lo relacionado a acciones hechas sobre y con la base de datos **MongoDB** con instrucciones de la librería 'pymongo.'
 
-## Tecnologías y herramientas
+## Posibles Tecnologias
+
+| web-scraper | testing | generacion de graficos |  
+| [BS4](https://www.crummy.com/software/BeautifulSoup/) y [requests](https://docs.python-requests.org/en/master/index.html) | [pytest](https://docs.pytest.org/en/6.2.x/) | [ggplot](https://github.com/yhat/ggpy) |
+| [Selenium](https://www.selenium.dev/) | [Robot](https://robotframework.org/) | [matplotlib](https://matplotlib.org/) |
+
+## Tecnologías y Herramientas Eligidas
 
 - **[Python](https://docs.python.org/3/)**
   - **Beautiful Soup 4** es una biblioteca de Python para extraer datos de archivos HTML y XML dejando a elegir el parser para proporcional formas de navegación, búsqueda y modificación. [Referencia](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
@@ -135,7 +175,6 @@ Para la parte de diseño web se ha usado una **metodología prototipada** donde 
   - **matplotlib** es una librería para crear animaciones estáticas y visualizaciones interactivas en Python. [Referencia](https://matplotlib.org/stable/)
   - **pytest** es un framework usado para escribir casos test y poner aprueba aplicaciones y librerías. [Referencia](https://docs.pytest.org/en/6.2.x/)
   - **coverage** junto a *pytest* es una herramienta para medir el código cubierto de un programa. Monitoriza el programa informando de que cantidad de código ha sido ejecutada. [Referencia](https://coverage.readthedocs.io/en/6.2/)
-
 - **[MongoDB](https://docs.mongodb.com/)**
   - **pymongo** es una librería que contiene herramientas para trabajar con [MongoDB](http://www.mongodb.org/). [Referencia](https://pymongo.readthedocs.io/en/stable/)
 - **[Hugo](https://gohugo.io/documentation/)**
