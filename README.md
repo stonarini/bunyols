@@ -160,9 +160,10 @@ Para la parte de diseño web se ha usado una **metodología prototipada** donde 
 
 ## Posibles Tecnologias
 
-web-scraper | testing | generacion de graficos |  
-[BS4](https://www.crummy.com/software/BeautifulSoup/) y [requests](https://docs.python-requests.org/en/master/index.html) | [pytest](https://docs.pytest.org/en/6.2.x/) | [ggplot](https://github.com/yhat/ggpy) |  
-[Selenium](https://www.selenium.dev/) | [Robot](https://robotframework.org/) | [matplotlib](https://matplotlib.org/) |
+web-scraper | testing | generacion de graficos  
+--- | --- | ---
+[BS4](https://www.crummy.com/software/BeautifulSoup/) y [requests](https://docs.python-requests.org/en/master/index.html) | [pytest](https://docs.pytest.org/en/6.2.x/) | [ggplot](https://github.com/yhat/ggpy)  
+[Selenium](https://www.selenium.dev/) | [Robot](https://robotframework.org/) | [matplotlib](https://matplotlib.org/)  
 
 ## Tecnologías y Herramientas Eligidas
 
