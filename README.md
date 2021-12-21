@@ -342,6 +342,21 @@ Podemos observar como nuestros tests tienen una cobertura del 91% de las lineas 
 Con unos pocos tests deberiamos llegar al 100% sin problemas.
 
 ## Pruebas Esquema BBDD
+
+```
+En pytest, cuando ejecutas los tests, un . verde significa que el test ha pasado y una F roja significa que ha fallado. Todo el output del programa generado por un test vendra antes del . o F que represente ese test.
+
+i.e: 
+test/test_prueba.py ..
+Este test ha fallado 
+F Este test no
+.
+
+En este ejemplo podemos ver que hay 4 tests.  
+Los dos primeros han pasado sin ningun output, mientras que el tercero ha fallado y ha tenido output.
+El cuarto no ha fallado y ha tenido tambien un output descriptivo.
+```
+
 ### Create
 Como podemos observar en los [test de create](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_1_create.py),
 seguimos nuestro diseno de un test que pase y otro que no, asi que en estos tests intentamos meter un documento que no sigue nuestro esquema y otro que si:  
