@@ -27,6 +27,7 @@
     - [**Read**](#read)
     - [**Update**](#update)
     - [**Delete**](#delete)
+  - [**Frontend**](#frontend)
 - [**Comparación Temporal**](#comparación-temporal)
   - [**Clockify**](#clockify)
   - [**Justificación temporal**](#justificación-temporal)
@@ -387,6 +388,15 @@ Como último, están los [tests de delete](https://github.com/stonarini/Bunyols/
 Aquí podemos observar como el primer test pasa sin problema, mientras que el segundo nos avisa de que el elemento no existe:
 ![delete](images/delete.png)
 
+## **Frontend**
+
+Dentro del repositorio existe una rama llamada [hugo-template](https://github.com/stonarini/Bunyols/tree/hugo-template) donde reside todo lo relacionado a la parte visual aportada al usuario. 
+
+Describiendo nuestro diseño, hemos ido a por una visualización sencilla y organizada de la información.
+
+![home](images/home-bunyols.png)
+![bunyols](images/bunyols-page.png)
+
 # **Comparación Temporal**
 
 ## **Clockify**
@@ -419,6 +429,12 @@ Teniendo el gráfico presente la tarea en la que más hemos invertido tiempo ha 
 Invertimos así el tiempo teniendo en mente que la lógica detrás de 'markdownify' no nos iba a ocupar el tiempo que sabíamos la creación del scraper desde cero sí.
 
 # **Conclusiones**
+
+En el desarrollo de este trabajo se ha aprendido mucho de las buenas prácticas mientras se codifica aprendidas así como el pensamiento previo a codificar que se debe de tener en mente a la hora de empezar a trabajar.
+
+Nunca dudamos de que aun al empezar tarde el desarrollo del proyecto en sí de que llegaríamos a tiempo a su entrega con unos resultados bastantes satisfactorios para nosotros, además de darnos una cucharada de todo el tiempo que se invierte en desarrollar un programa con un funcionamiento correcto, y sobre todo que salga como tú quieras.
+
+
 
 ## **Posibles mejoras**
 
