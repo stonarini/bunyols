@@ -21,6 +21,8 @@
   - [Componentes](#componentes)
   - [Esquema BBDD](#esquema-bbdd)
   - [Ejemplo Real](#ejemplo-real)
+  - [Pruebas](#pruebas)
+  - [Coverage](#coverage)
 - [Comparación Temporal](#comparación-temporal)
   - [Clockify](#clockify)
   - [Justificación temporal](#justificación-temporal)
@@ -314,6 +316,25 @@ web-scraper | testing | generacion de graficos
     "categories": ["IT"],
 }
 ```
+
+## Pruebas
+Organizamos nuestras pruebas de manera que cada unidad tubiese minimo 2 tests:
+- un test que simulase una ejecucion correcta
+- un test que simulase el peor caso posible
+
+Con estos tests ya se podia iniciar a codificar. Despues, si habia mas casos para tener en cuenta o se nos ocurria mas tests los 
+hibamos anadiendo.
+
+Para mas concretizacion sobre los tests, vease el file [pytest.ini](https://github.com/stonarini/Bunyols/blob/develop/pytest.ini) o la carpeta de tests en la rama [develop](https://github.com/stonarini/Bunyols/tree/develop/test).
+
+Lo que si merece la pena mencionar son los test del modulo *database*, que estan disenados de manera que un elemento se cree, actualize y luego se borre, sin dejar elementos no queridos en la base de datos.
+
+## Coverage
+
+![coverage](images/coverage.png)
+
+Podemos observar como nuestros tests tienen una cobertura del 91% de las lineas de codigo.
+Con unos pocos tests deberiamos llegar al 100% sin problemas.
 
 # Comparación Temporal
 
