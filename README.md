@@ -351,7 +351,7 @@ o F que represente ese test.
 i.e: 
 test/test_prueba.py ..
 Este test ha fallado 
-F Este test no
+F Este test NO ha fallado
 .
 
 En este ejemplo podemos ver que hay 4 test.  
