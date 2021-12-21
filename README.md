@@ -1,42 +1,41 @@
-# The Bunyols Library
+# **The Bunyols Library**
 
-# Tabla de contenidos
+**Tabla de contenidos**
 
-- [The Bunyols Library](#the-bunyols-library)
-- [Tabla de contenidos](#tabla-de-contenidos)
-- [Introducción](#introducción)
-- [Historia](#historia)
-- [Manual](#manual)
-  - [Pre-requisitos](#pre-requisitos)
-  - [Instalación](#instalación)
-  - [Uso](#uso)
-- [Metodología](#metodología)
-- [Descripción Técnica](#descripción-técnica)
-  - [Partes Interesadas y Requisitos Funcionales/No Funcionales](#partes-interesadas-y-requisitos-funcionalesno-funcionales)
-  - [Diagrama de Casos de Uso](#diagrama-de-casos-de-uso)
-  - [Arquitectura de la aplicación](#arquitectura-de-la-aplicación)
-  - [Posibles Tecnologías](#posibles-tecnologías)
-  - [Tecnologías y Herramientas Elegidas](#tecnologías-y-herramientas-elegidas)
-- [Diseño](#diseño)
-  - [Componentes](#componentes)
-  - [Esquema BBDD](#esquema-bbdd)
-  - [Ejemplo Real](#ejemplo-real)
-  - [Pruebas](#pruebas)
-  - [Coverage](#coverage)
-  - [Pruebas Esquema BBDD](#pruebas-esquema-bbdd)
-    - [Create](#create)
-    - [Read](#read)
-    - [Update](#update)
-    - [Delete](#delete)
-- [Comparación Temporal](#comparación-temporal)
-  - [Clockify](#clockify)
-  - [Justificación temporal](#justificación-temporal)
-- [Conclusiones](#conclusiones)
-  - [Posibles mejoras](#posibles-mejoras)
-- [Dificultades](#dificultades)
+- [**The Bunyols Library**](#the-bunyols-library)
+- [**Introducción**](#introducción)
+- [**Historia**](#historia)
+- [**Manual**](#manual)
+  - [**Pre-requisitos**](#pre-requisitos)
+  - [**Instalación**](#instalación)
+  - [**Uso**](#uso)
+- [**Metodología**](#metodología)
+- [**Descripción técnica**](#descripción-técnica)
+  - [**Partes interesadas y requisitos funcionales/no funcionales**](#partes-interesadas-y-requisitos-funcionalesno-funcionales)
+  - [**Diagrama de casos de uso**](#diagrama-de-casos-de-uso)
+  - [**Arquitectura de la aplicación**](#arquitectura-de-la-aplicación)
+  - [**Posibles tecnologías**](#posibles-tecnologías)
+  - [**Tecnologías y Herramientas Elegidas**](#tecnologías-y-herramientas-elegidas)
+- [**Diseño**](#diseño)
+  - [**Componentes**](#componentes)
+  - [**Esquema BBDD**](#esquema-bbdd)
+  - [**Ejemplo Real**](#ejemplo-real)
+  - [**Pruebas**](#pruebas)
+  - [**Coverage**](#coverage)
+  - [**Pruebas Esquema BBDD**](#pruebas-esquema-bbdd)
+    - [**Create**](#create)
+    - [**Read**](#read)
+    - [**Update**](#update)
+    - [**Delete**](#delete)
+- [**Comparación Temporal**](#comparación-temporal)
+  - [**Clockify**](#clockify)
+  - [**Justificación temporal**](#justificación-temporal)
+- [**Conclusiones**](#conclusiones)
+  - [**Posibles mejoras**](#posibles-mejoras)
+- [**Dificultades**](#dificultades)
 
 
-# Introducción
+# **Introducción**
 
 **Bunyols Library** nace con la idea de presentar la información básica que cualquier libro debe de tener. Únicamente información representativa sobre el libro en sí de una forma muy fácil para el usuario.
 
@@ -48,7 +47,7 @@ Y por último, emplearemos el servidor web [*Nginx*](https://www.nginx.com) para
 
 ![simplediagram](images/technologies.png)
 
-# Historia
+# **Historia**
 
 
 Nuestro tan llamativo nombre surgió de un día ir caminando por Palma de Mallorca y una mujer en un puesto de estos aceitosos y sabrosas frutas fritas regalarme una bolsa de 1kg totalmente gratis. No era capaz de comerme tal semejante cantidad de [*fruta de sartén*](https://es.wikipedia.org/wiki/Bu%C3%B1uelo) y así fue como Samuele comió bunyols de camino al tren, dentro del tren y de desayuno al siguiente día. 
@@ -56,9 +55,9 @@ Nuestro tan llamativo nombre surgió de un día ir caminando por Palma de Mallor
 - *Con cariño, Eze*
 
 
-# Manual
+# **Manual**
 
-## Pre-requisitos
+## **Pre-requisitos**
   - `Git` 
   - `Python3`
   - `pip3`
@@ -68,7 +67,7 @@ Nuestro tan llamativo nombre surgió de un día ir caminando por Palma de Mallor
   - `pymongo`
   - `matplotlib` 
 
-## Instalación
+## **Instalación**
 
 Se recomienda utilizar en 'virtualenv' para instalar todas las dependencias utilizadas por el programa. En [Windows](https://docs.python.org/es/3.8/library/venv.html) lo puedes instalar siguiendo su guía. En **Linux** ejecuta la siguiente instrucción.
 
@@ -96,7 +95,7 @@ Cuando se quiera entrar en el entorno virtual sin pasar por './setup.sh', ejecut
 ```
 $ source venv/bin/activate
 ```
-## Uso
+## **Uso**
 
 **1. Formatea los elementos de la lista de la siguiente manera**.
 ```
@@ -117,7 +116,7 @@ python3 bunyols.py [CARPETA]/
 ```
 - 'CARPETA' hace referencia al directorio de 'Hugo'.
 
-# Metodología
+# **Metodología**
 
 Para la parte lógica de la aplicación se ha usado una **metodología incremental** utilizando la filosofía de construir funcionalidades del programa, analizándolo y construyendo incrementos donde uno unido al otro tiene el fin de construir un uso funcional de la aplicación.
 
@@ -125,9 +124,9 @@ Para la parte de diseño web se ha empleado una **metodología prototipada** don
 
 Por último, hemos usado **Scrum** como marco de trabajo durante todo el proyecto.
 
-# Descripción Técnica
+# **Descripción técnica**
 
-## Partes Interesadas y Requisitos Funcionales/No Funcionales
+## **Partes interesadas y requisitos funcionales/no funcionales**
 Como parte interesada solo tenemos a lo que vienen siendo los empleados de la empresa que necesitan visualizar y gestionar los elementos de
 la base de datos con nuestra aplicación. Podemos denominar esta parte interesada como *Empleado*.
 
@@ -148,10 +147,11 @@ la base de datos con nuestra aplicación. Podemos denominar esta parte interesad
 - RnF_03: Creación de Gráficos
 - Se generaran automáticamente gráficos al renderizar la página
 
- ## Diagrama de Casos de Uso
+ ## **Diagrama de casos de uso**
 
  ![Use Cases](images/usecases.png)
- ## Arquitectura de la aplicación
+
+ ## **Arquitectura de la aplicación**
 
  ![architecture](images/architecture.png)
 
@@ -170,14 +170,14 @@ la base de datos con nuestra aplicación. Podemos denominar esta parte interesad
 - **Data layer**
   - **database** todo lo relacionado a acciones hechas sobre y con la base de datos **MongoDB** con instrucciones de la librería 'pymongo.'
 
-## Posibles Tecnologías
+## **Posibles tecnologías**
 
 web-scraper | testing | generación de gráficos  
 --- | --- | ---
 [BS4](https://www.crummy.com/software/BeautifulSoup/) y [requests](https://docs.python-requests.org/en/master/index.html) | [pytest](https://docs.pytest.org/en/6.2.x/) | [ggplot](https://github.com/yhat/ggpy)  
 [Selenium](https://www.selenium.dev/) | [Robot](https://robotframework.org/) | [matplotlib](https://matplotlib.org/)  
 
-## Tecnologías y Herramientas Elegidas
+## **Tecnologías y Herramientas Elegidas**
 
 - **[Python](https://docs.python.org/3/)**
   - **Beautiful Soup 4** es una biblioteca de Python para extraer datos de archivos HTML y XML dejando a elegir el parser para proporcional formas de navegación, búsqueda y modificación. [Referencia](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
@@ -199,11 +199,11 @@ web-scraper | testing | generación de gráficos
 - **Markdown**
 - Lenguaje de marcado ligero utilizado en **gohugo**
 
-# Diseño
+# **Diseño**
 
 ![components](/images/components.png)
 
-## Componentes
+## **Componentes**
 
 - **`utilities`** package que alberga *herramientas* que devuelven una información utilizada por otros módulos o realizan una tarea en específico.
 
@@ -217,7 +217,7 @@ web-scraper | testing | generación de gráficos
 
 - **`database`** package donde se sitúa todo lo relacionado con el manejo de la base de datos, en resumen, sus métodos CRUD.
 
-## Esquema BBDD
+## **Esquema BBDD**
 
 ```json
 {
@@ -301,7 +301,7 @@ web-scraper | testing | generación de gráficos
     }
 }
 ```
-## Ejemplo Real
+## **Ejemplo Real**
 ```json
 {
     "title": "Code Complete",
@@ -327,7 +327,7 @@ web-scraper | testing | generación de gráficos
 }
 ```
 
-## Pruebas
+## **Pruebas**
 
 Organizamos nuestras pruebas de manera que cada unidad hubiese mínimo 2 test:
 
@@ -340,14 +340,14 @@ Para más concretización sobre los test, véase el file [pytest.ini](https://gi
 
 Lo que si merece la pena mencionar son los test del módulo *database*, que están diseñados de manera que un elemento se cree, actualice y luego se borre, sin dejar elementos no queridos en la base de datos.
 
-## Coverage
+## **Coverage**
 
 ![coverage](images/coverage.png)
 
 Podemos observar como nuestros test tienen una cobertura del 91% de las lineas de código.
 Con unos pocos test deberíamos llegar al 100% sin problemas.
 
-## Pruebas Esquema BBDD
+## **Pruebas Esquema BBDD**
 
 
 ```
@@ -367,29 +367,29 @@ output.
 El cuarto no ha fallado y ha tenido también un output descriptivo.
 ```
 
-### Create
+### **Create**
 Como podemos observar en los [test de create](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_1_create.py),
 seguimos nuestro diseño de un test que pase y otro que no, así que en estos test intentamos meter un documento que no sigue nuestro esquema y otro que si:
 ![create](images/create.png)
 
-### Read
+### **Read**
 En los [test de find](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_2_find.py) test intentamos leer dos
 elementos, uno que no existe y otro que si. Los dos test pasan sin problema:
 ![find](images/find.png)
 
-### Update
+### **Update**
 En el caso de los [test de update](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_3_update.py) tenemos tres test, uno que intenta añadir un parámetro *test* que no está presente en el esquema, otro que intenta añadir el parámetro opcional *family* que sí que está presente en el esquema, pero no es obligatorio, y por último este test simula una actualización de las reviews y un cambio de precio.
 Como podemos observar el primer test da error y nos dice si estamos seguros de que nuestro documento sigue el esquema, mientras que los otros dos test pasan sin problemas.
 ![update](images/update.png)
 
-### Delete
+### **Delete**
 Como último, están los [tests de delete](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_4_delete.py). El primer test borra el elemento creado en los *tests de create*, mientras que el segundo test intenta borrar un elemento que no existe.
 Aquí podemos observar como el primer test pasa sin problema, mientras que el segundo nos avisa de que el elemento no existe:
 ![delete](images/delete.png)
 
-# Comparación Temporal
+# **Comparación Temporal**
 
-## Clockify
+## **Clockify**
 Para tener bajo control el tiempo utilizado y para poder comparar nuestras estimaciones hemos usado la herramienta Clockify con las siguientes etiquetas:
 
 - **Scraper:** Para los módulos 'book_scraper' y 'get_page_source'.
@@ -412,20 +412,20 @@ Predicción de Tiempo: 34h
 Tiempo Real: 56h y 40min
 ```
 
-## Justificación temporal
+## **Justificación temporal**
 
 Teniendo el gráfico presente la tarea en la que más hemos invertido tiempo ha sido en la creación de nuestro propio scraper, teníamos la opción de usar el scraper ya hecho por nuestros tutores de segundo, pero prescindimos de este al no ser posible adaptarlo del todo a los requisitos que queríamos.
 
 Invertimos así el tiempo teniendo en mente que la lógica detrás de 'markdownify' no nos iba a ocupar el tiempo que sabíamos la creación del scraper desde cero sí.
 
-# Conclusiones
+# **Conclusiones**
 
-## Posibles mejoras
+## **Posibles mejoras**
 
 - Estamos trabajando en la implementación de [Typer](https://typer.tiangolo.com/) para poder realizar una inserción nueva de libros desde la linea de comandos.
 - Estamos trabajando en la implementación de [Typer](https://typer.tiangolo.com/) para poder manejar funciones relacionadas al modulo de base de datos desde la linea de comandos.
 
-# Dificultades
+# **Dificultades**
 
 No hemos experimentado dificultades notorias mas haya que desarrollar el modulo `book-scraper` desde cero, pues el proyecto no consistía directamente en esta funcionalidad pero se necesitaba si queríamos crear el proyecto a nuestros gustos personales.
 
