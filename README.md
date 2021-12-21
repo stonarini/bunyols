@@ -11,12 +11,12 @@
   - [Instalación](#instalación)
   - [Uso](#uso)
 - [Metodología](#metodología)
-- [Descripción tecnica](#descripción-tecnica)
+- [Descripción Técnica](#descripción-técnica)
   - [Partes Interesadas y Requisitos Funcionales/No Funcionales](#partes-interesadas-y-requisitos-funcionalesno-funcionales)
   - [Diagrama de Casos de Uso](#diagrama-de-casos-de-uso)
-  - [Arquitectura de la aplicacón](#arquitectura-de-la-aplicacón)
-  - [Posibles Tecnologias](#posibles-tecnologias)
-  - [Tecnologías y Herramientas Eligidas](#tecnologías-y-herramientas-eligidas)
+  - [Arquitectura de la aplicación](#arquitectura-de-la-aplicación)
+  - [Posibles Tecnologías](#posibles-tecnologías)
+  - [Tecnologías y Herramientas Elegidas](#tecnologías-y-herramientas-elegidas)
 - [Diseño](#diseño)
   - [Componentes](#componentes)
   - [Esquema BBDD](#esquema-bbdd)
@@ -30,7 +30,7 @@
     - [Delete](#delete)
 - [Comparación Temporal](#comparación-temporal)
   - [Clockify](#clockify)
-  - [Justificación temporal](#justificación-temporal)
+  - [Justificación Temporal](#justificación-temporal)
 - [Conclusiones](#conclusiones)
   - [Posibles mejoras](#posibles-mejoras)
 - [Dificultades](#dificultades)
@@ -40,9 +40,9 @@
 
 **Bunyols Library** nace con la idea de presentar la información básica que cualquier libro debe de tener. Únicamente información representativa sobre el libro en sí de una forma muy fácil para el usuario.
 
-En este proyecto usaremos [*MongoDB*](https://www.mongodb.com) como base de datos a travez del servicio Mongo Atlas. 
-Para la logica de la aplicacion usaremos el lenguage de programacion [*Python*](https://www.python.org) (version 3.9). 
-Para la conversion y creacion de el sitio web estatico usaremos el SSG [*Hugo*](https://gohugo.io). 
+En este proyecto usaremos [*MongoDB*](https://www.mongodb.com) como base de datos a través del servicio Mongo Atlas. 
+Para la lógica de la aplicación usaremos el lenguaje de programación [*Python*](https://www.python.org) (versión 3.9). 
+Para la conversión y creación de el sitio web estático usaremos el SSG [*Hugo*](https://gohugo.io). 
 Y por Ultimo, usaremos el servidor web [*Nginx*](https://www.nginx.com) para servir nuestro sitio web.
 
 ![simplediagram](images/technologies.png)
@@ -67,13 +67,13 @@ Nuestro tan llamativo nombre surgió de un día ir caminando por Palma de Mallor
 
 ## Instalación
 
-Se recomienda utilizar en `virtualenv` para instalar todas las dependencias utilizadas por el programa. En [Windows](https://docs.python.org/es/3.8/library/venv.html) lo puedes instalar siguiendo su guia. En **Linux** ejecuta la siguiente instrucción.
+Se recomienda utilizar en `virtualenv` para instalar todas las dependencias utilizadas por el programa. En [Windows](https://docs.python.org/es/3.8/library/venv.html) lo puedes instalar siguiendo su guiá. En **Linux** ejecuta la siguiente instrucción.
 
 ```
 $ sudo apt-get install python3-venv
 ```
 
-Crea un directorio y situate dentro de el. Aqui dentro residira todo el codigo de la aplicacion.
+Crea un directorio y situate dentro de el. Aquí dentro residirá todo el código de la aplicación.
 
 ```
 $ mkdir ./bunyols-library
@@ -107,7 +107,7 @@ $ source venv/bin/activate
 ```
 ("https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882", ("Robert C Martin Series", ["IT"])
 ```
-**2.Ejecuta `bunyols.py` encima del archivo donde esten todos tus libros a scrapear definiendo la carpeta de `Hugo` donde se creara el contenido**.
+**2.Ejecuta `bunyols.py` encima del archivo donde estén todos tus libros a scrapear definiendo la carpeta de `Hugo` donde se creara el contenido**.
 
 ```
 python3 bunyols.py [CARPETA]/
@@ -120,11 +120,11 @@ Para la parte lógica de la aplicación se ha usado una **metodología increment
 
 Para la parte de diseño web se ha usado una **metodología prototipada** donde hemos diseñado diferentes prototipos de la página en diferentes formatos *(papel y [software gráfico](https://www.figma.com/)).* Una vez elegido el diseño, se recreó en HTML y CSS pasándolo por último a **hugo**.
 
-# Descripción tecnica
+# Descripción Técnica
 
  ## Partes Interesadas y Requisitos Funcionales/No Funcionales
  Como parte interesada solo tenemos a lo que vienen siendo los empleados de la empresa que necesitan visualizar y gestionar los elementos de 
- la base de datos con nuestra aplicacion.  Podemos denominar esta parte interesada como *Empleado*.
+ la base de datos con nuestra aplicación.  Podemos denominar esta parte interesada como *Empleado*.
 
  **Requisitos Funcionales**
  - RF_Epleado_01: Visualizar Elementos (R)
@@ -136,17 +136,17 @@ Para la parte de diseño web se ha usado una **metodología prototipada** donde 
  - RF_Epleado_04: Borrar Elementos (D)
 
  **Requisitos No Funcionales**
- - RnF_01: Recollecion Automatica de Datos
-   - Al crear un nuevo elemento se usara un web scraper para recolecctar automaticamente datos sobre ese elemento.
- - RnF_02: Catalogacion de Elementos
-   - A cada elemento se asignaran categorias que serviran para agruparlos
- - RnF_03: Creacion de Graficos
-   - Se generaran automaticamente graficos al renderizar la pagina
+ - RnF_01: Recolección Automática de Datos
+   - Al crear un nuevo elemento se usara un web scraper para recolectar automáticamente datos sobre ese elemento.
+ - RnF_02: Catalogación de Elementos
+   - A cada elemento se asignaran categorías que servirán para agruparlos
+ - RnF_03: Creación de Gráficos
+   - Se generaran automáticamente gráficos al renderizar la pagina
 
  ## Diagrama de Casos de Uso
 
  ![Use Cases](images/usecases.png)
- ## Arquitectura de la aplicacón
+ ## Arquitectura de la aplicación
 
  ![architecture](images/architecture.png)
 
@@ -165,14 +165,14 @@ Para la parte de diseño web se ha usado una **metodología prototipada** donde 
 - **Data layer**
   - **database** todo lo relacionado a acciones hechas sobre y con la base de datos **MongoDB** con instrucciones de la librería 'pymongo.'
 
-## Posibles Tecnologias
+## Posibles Tecnologías
 
-web-scraper | testing | generacion de graficos  
+web-scraper | testing | generación de gráficos  
 --- | --- | ---
 [BS4](https://www.crummy.com/software/BeautifulSoup/) y [requests](https://docs.python-requests.org/en/master/index.html) | [pytest](https://docs.pytest.org/en/6.2.x/) | [ggplot](https://github.com/yhat/ggpy)  
 [Selenium](https://www.selenium.dev/) | [Robot](https://robotframework.org/) | [matplotlib](https://matplotlib.org/)  
 
-## Tecnologías y Herramientas Eligidas
+## Tecnologías y Herramientas Elegidas
 
 - **[Python](https://docs.python.org/3/)**
   - **Beautiful Soup 4** es una biblioteca de Python para extraer datos de archivos HTML y XML dejando a elegir el parser para proporcional formas de navegación, búsqueda y modificación. [Referencia](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
@@ -323,29 +323,29 @@ web-scraper | testing | generacion de graficos
 ```
 
 ## Pruebas
-Organizamos nuestras pruebas de manera que cada unidad tubiese minimo 2 tests:
-- un test que simulase una ejecucion correcta
+Organizamos nuestras pruebas de manera que cada unidad hubiese mínimo 2 test:
+- un test que simulase una ejecución correcta
 - un test que simulase el peor caso posible
 
-Con estos tests ya se podia iniciar a codificar. Despues, si habia mas casos para tener en cuenta o se nos ocurria mas tests los 
-hibamos anadiendo.
+Con estos test ya se podía iniciar a codificar. Después, si había mas casos para tener en cuenta o se nos ocurría mas test los 
+hibamos añadiendo.
 
-Para mas concretizacion sobre los tests, vease el file [pytest.ini](https://github.com/stonarini/Bunyols/blob/develop/pytest.ini) o la carpeta de tests en la rama [develop](https://github.com/stonarini/Bunyols/tree/develop/test).
+Para mas concretización sobre los test, véase el file [pytest.ini](https://github.com/stonarini/Bunyols/blob/develop/pytest.ini) o la carpeta de test en la rama [develop](https://github.com/stonarini/Bunyols/tree/develop/test).
 
-Lo que si merece la pena mencionar son los test del modulo *database*, que estan disenados de manera que un elemento se cree, actualize y luego se borre, sin dejar elementos no queridos en la base de datos.
+Lo que si merece la pena mencionar son los test del modulo *database*, que están diseñados de manera que un elemento se cree, actualice y luego se borre, sin dejar elementos no queridos en la base de datos.
 
 ## Coverage
 
 ![coverage](images/coverage.png)
 
-Podemos observar como nuestros tests tienen una cobertura del 91% de las lineas de codigo.
-Con unos pocos tests deberiamos llegar al 100% sin problemas.
+Podemos observar como nuestros test tienen una cobertura del 91% de las lineas de código.
+Con unos pocos test deberíamos llegar al 100% sin problemas.
 
 ## Pruebas Esquema BBDD
 
 ```
-En pytest, cuando ejecutas los tests, un . verde significa que el test ha pasado y una F roja 
-significa que ha fallado. Todo el output del programa generado por un test vendra antes del . 
+En pytest, cuando ejecutas los test, un . verde significa que el test ha pasado y una F roja 
+significa que ha fallado. Todo el output del programa generado por un test vendrá antes del . 
 o F que represente ese test.
 
 i.e: 
@@ -354,31 +354,31 @@ Este test ha fallado
 F Este test no
 .
 
-En este ejemplo podemos ver que hay 4 tests.  
-Los dos primeros han pasado sin ningun output, mientras que el tercero ha fallado y ha tenido 
+En este ejemplo podemos ver que hay 4 test.  
+Los dos primeros han pasado sin ningún output, mientras que el tercero ha fallado y ha tenido 
 output.
-El cuarto no ha fallado y ha tenido tambien un output descriptivo.
+El cuarto no ha fallado y ha tenido también un output descriptivo.
 ```
 
 ### Create
 Como podemos observar en los [test de create](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_1_create.py),
-seguimos nuestro diseno de un test que pase y otro que no, asi que en estos tests intentamos meter un documento que no sigue nuestro esquema y otro que si:  
+seguimos nuestro diseño de un test que pase y otro que no, así que en estos test intentamos meter un documento que no sigue nuestro esquema y otro que si:  
 ![create](images/create.png)
 
 ### Read
 En los [test de find](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_2_find.py) test intentamos leer dos 
-elementos, uno que no existe y otro que si. Los dos tests pasan sin problema:  
+elementos, uno que no existe y otro que si. Los dos test pasan sin problema:  
 ![find](images/find.png)
 
 
 ### Update
-En el casos de los [test de update](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_3_update.py) tenemos tres tests, uno que intenta anadir un parametro *test* que no esta presente en el esquema, otro que intenta anadir el parametro opcional *family* que si que esta presente en el esquema pero no es obligatorio, y por ultimo este test simula una actualizacion de las reviews y un cambio de precio.  
-Como podemos observar el primer test da error y nos dice si estamos seguros que nuestro documento sigue el esquema, mientras que los otros dos tests pasan sin problemas.  
+En el casos de los [test de update](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_3_update.py) tenemos tres test, uno que intenta añadir un parámetro *test* que no esta presente en el esquema, otro que intenta añadir el parámetro opcional *family* que si que esta presente en el esquema pero no es obligatorio, y por ultimo este test simula una actualización de las reviews y un cambio de precio.  
+Como podemos observar el primer test da error y nos dice si estamos seguros que nuestro documento sigue el esquema, mientras que los otros dos test pasan sin problemas.  
 ![update](images/update.png)
 
 ### Delete
 Como ultimo, estan los [tests de delete](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_4_delete.py). El primer test borra el elemento creado en los *tests de create*, mientras que el segundo test intenta borrar un elemento que no existe.  
-Aqui podemos observar como el primer test pasa sin problema, mientras que el segundo nos avisa de que el elemento no existe:  
+Aquí podemos observar como el primer test pasa sin problema, mientras que el segundo nos avisa de que el elemento no existe:  
 ![delete](images/delete.png)
 
 # Comparación Temporal
@@ -396,15 +396,16 @@ Para tener bajo control el tiempo utilizado y para poder comparar nuestras estim
   
 ![clockify](images/clockify.png)
 
-Nuestra prediccion temporal fue 34 horas, aunque no contamos con cosas como la configuracion, documentacion y refactorizacion:
+Nuestra predicción temporal fue 34 horas, aunque no contamos con cosas como la configuración, documentación y refactorización:
 
 ![time](images/time.png)
+
 ```yaml
-Prediccion de Tiempo: 34h
+Predicción de Tiempo: 34h
 
 Tiempo Real: 56h y 40min
 ```
-## Justificación temporal
+## Justificación Temporal
 Teniendo el gráfico presente la tarea en la que más hemos invertido tiempo ha sido en la creación de nuestro propio scraper, teníamos la opción de usar el scraper ya hecho por nuestros tutores de segundo, pero prescindimos de este al no ser posible adaptarlo del todo a los requisitos que queríamos.
 
 Invertimos así el tiempo teniendo en mente que la lógica detrás de 'markdownify' no nos iba a ocupar el tiempo que sabíamos la creación del scraper desde cero sí.
@@ -413,10 +414,10 @@ Invertimos así el tiempo teniendo en mente que la lógica detrás de 'markdowni
 
 ## Posibles mejoras
 
-- Estamos trabajando en la implementacion de [Typer](https://typer.tiangolo.com/) para poder realizar una inserción nueva de libros desde la linea de comandos.
+- Estamos trabajando en la implementación de [Typer](https://typer.tiangolo.com/) para poder realizar una inserción nueva de libros desde la linea de comandos.
 - Estamos trabajando en la implementación de [Typer](https://typer.tiangolo.com/) para poder manejar funciones relacionadas al modulo de base de datos desde la linea de comandos.
 
 # Dificultades
 
-No hemos experimentado dificultades notorias mas haya que desarrollar el modulo `book-scraper` desde cero, pues el proyecto no consistia directamente en esta funcionalidad pero se necesitaba si queriamos crear el proyecto a nuestros gustos personales.
+No hemos experimentado dificultades notorias mas haya que desarrollar el modulo `book-scraper` desde cero, pues el proyecto no consistía directamente en esta funcionalidad pero se necesitaba si queríamos crear el proyecto a nuestros gustos personales.
 
