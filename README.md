@@ -23,6 +23,11 @@
   - [Ejemplo Real](#ejemplo-real)
   - [Pruebas](#pruebas)
   - [Coverage](#coverage)
+  - [Pruebas Esquema BBDD](#pruebas-esquema-bbdd)
+    - [Create](#create)
+    - [Read](#read)
+    - [Update](#update)
+    - [Delete](#delete)
 - [Comparación Temporal](#comparación-temporal)
   - [Clockify](#clockify)
   - [Justificación temporal](#justificación-temporal)
@@ -335,6 +340,28 @@ Lo que si merece la pena mencionar son los test del modulo *database*, que estan
 
 Podemos observar como nuestros tests tienen una cobertura del 91% de las lineas de codigo.
 Con unos pocos tests deberiamos llegar al 100% sin problemas.
+
+## Pruebas Esquema BBDD
+### Create
+Como podemos observar en los [test de create](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_1_create.py),
+seguimos nuestro diseno de un test que pase y otro que no, asi que en estos tests intentamos meter un documento que no sigue nuestro esquema y otro que si:  
+![create](images/create.png)
+
+### Read
+En los [test de find](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_2_find.py) test intentamos leer dos 
+elementos, uno que no existe y otro que si. Los dos tests pasan sin problema:  
+![find](images/find.png)
+
+
+### Update
+En el casos de los [test de update](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_3_update.py) tenemos tres tests, uno que intenta anadir un parametro *test* que no esta presente en el esquema, otro que intenta anadir el parametro opcional *family* que si que esta presente en el esquema pero no es obligatorio, y por ultimo este test simula una actualizacion de las reviews y un cambio de precio.  
+Como podemos observar el primer test da error y nos dice si estamos seguros que nuestro documento sigue el esquema, mientras que los otros dos tests pasan sin problemas.  
+![update](images/update.png)
+
+### Delete
+Como ultimo, estan los [tests de delete](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_4_delete.py). El primer test borra el elemento creado en los *tests de create*, mientras que el segundo test intenta borrar un elemento que no existe.  
+Aqui podemos observar como el primer test pasa sin problema, mientras que el segundo nos avisa de que el elemento no existe:  
+![delete](images/delete.png)
 
 # Comparación Temporal
 
