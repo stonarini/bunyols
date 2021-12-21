@@ -30,7 +30,7 @@
     - [Delete](#delete)
 - [Comparación Temporal](#comparación-temporal)
   - [Clockify](#clockify)
-  - [Justificación Temporal](#justificación-temporal)
+  - [Justificación temporal](#justificación-temporal)
 - [Conclusiones](#conclusiones)
   - [Posibles mejoras](#posibles-mejoras)
 - [Dificultades](#dificultades)
@@ -40,18 +40,21 @@
 
 **Bunyols Library** nace con la idea de presentar la información básica que cualquier libro debe de tener. Únicamente información representativa sobre el libro en sí de una forma muy fácil para el usuario.
 
-En este proyecto usaremos [*MongoDB*](https://www.mongodb.com) como base de datos a través del servicio Mongo Atlas. 
-Para la lógica de la aplicación usaremos el lenguaje de programación [*Python*](https://www.python.org) (versión 3.9). 
-Para la conversión y creación de el sitio web estático usaremos el SSG [*Hugo*](https://gohugo.io). 
-Y por Ultimo, usaremos el servidor web [*Nginx*](https://www.nginx.com) para servir nuestro sitio web.
+En este proyecto usaremos [*MongoDB*](https://www.mongodb.com) como base de datos a través del servicio Mongo Atlas.
+Para la lógica de la aplicación utilizaremos el lenguaje de programación [*Python*](https://www.python.org) (versión 3.9).
+
+Para la conversión y creación del sitio web estático utilizaremos el SSG [*Hugo*](https://gohugo.io).
+Y por último, emplearemos el servidor web [*Nginx*](https://www.nginx.com) para servir nuestro sitio web.
 
 ![simplediagram](images/technologies.png)
 
 # Historia
 
+
 Nuestro tan llamativo nombre surgió de un día ir caminando por Palma de Mallorca y una mujer en un puesto de estos aceitosos y sabrosas frutas fritas regalarme una bolsa de 1kg totalmente gratis. No era capaz de comerme tal semejante cantidad de [*fruta de sartén*](https://es.wikipedia.org/wiki/Bu%C3%B1uelo) y así fue como Samuele comió bunyols de camino al tren, dentro del tren y de desayuno al siguiente día. 
 
 - *Con cariño, Eze*
+
 
 # Manual
 
@@ -67,13 +70,13 @@ Nuestro tan llamativo nombre surgió de un día ir caminando por Palma de Mallor
 
 ## Instalación
 
-Se recomienda utilizar en `virtualenv` para instalar todas las dependencias utilizadas por el programa. En [Windows](https://docs.python.org/es/3.8/library/venv.html) lo puedes instalar siguiendo su guiá. En **Linux** ejecuta la siguiente instrucción.
+Se recomienda utilizar en 'virtualenv' para instalar todas las dependencias utilizadas por el programa. En [Windows](https://docs.python.org/es/3.8/library/venv.html) lo puedes instalar siguiendo su guía. En **Linux** ejecuta la siguiente instrucción.
 
 ```
 $ sudo apt-get install python3-venv
 ```
 
-Crea un directorio y situate dentro de el. Aquí dentro residirá todo el código de la aplicación.
+Crea un directorio y sitúate dentro de él. Aquí dentro residirá todo el código de la aplicación.
 
 ```
 $ mkdir ./bunyols-library
@@ -85,11 +88,11 @@ Ya dentro del directorio clona el repositorio.
 ```
 $ git clone git@github.com:stonarini/Bunyols.git
 ```
-Se preparo un archivo `setup` que activara el entorno virtual y descargara las dependencias necesarias por ti, ejecutalo.
+Se preparó un archivo 'setup' que activara el entorno virtual y descargara las dependencias necesarias por ti, ejecútalo.
 ```
 $ ./setup.sh
 ```
-Cuando se quiera entrar en el entorno virtual sin pasar por `./setup.sh`, ejecuta:
+Cuando se quiera entrar en el entorno virtual sin pasar por './setup.sh', ejecuta:
 ```
 $ source venv/bin/activate
 ```
@@ -97,51 +100,53 @@ $ source venv/bin/activate
 
 **1. Formatea los elementos de la lista de la siguiente manera**.
 ```
-("URL", ("Familia", ["Tematica"]))
+("URL", ("Familia", ["Temática"]))
 ```
-- `URL` referencia a la pagina del libro en Amazon.
-- `Familia` referencia al conjunto de libros que pertenece el actual.
-- `Tematica` referencia al tema del libro.
-  
+- 'URL' referencia a la página del libro en Amazon.
+- 'Familia' referencia al conjunto de libros que pertenece el actual.
+- 'Temática' referencia al tema del libro.
+
 **Un ejemplo**
 ```
 ("https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882", ("Robert C Martin Series", ["IT"])
 ```
-**2.Ejecuta `bunyols.py` encima del archivo donde estén todos tus libros a scrapear definiendo la carpeta de `Hugo` donde se creara el contenido**.
+**2. Ejecuta 'bunyols.py' encima del archivo donde estén todos tus libros a scrapear definiendo la carpeta de 'Hugo' donde se creara el contenido**.
 
 ```
 python3 bunyols.py [CARPETA]/
 ```
-- `CARPETA` hace referencia al directorio de `Hugo`.
+- 'CARPETA' hace referencia al directorio de 'Hugo'.
 
 # Metodología
 
 Para la parte lógica de la aplicación se ha usado una **metodología incremental** utilizando la filosofía de construir funcionalidades del programa, analizándolo y construyendo incrementos donde uno unido al otro tiene el fin de construir un uso funcional de la aplicación.
 
-Para la parte de diseño web se ha usado una **metodología prototipada** donde hemos diseñado diferentes prototipos de la página en diferentes formatos *(papel y [software gráfico](https://www.figma.com/)).* Una vez elegido el diseño, se recreó en HTML y CSS pasándolo por último a **hugo**.
+Para la parte de diseño web se ha empleado una **metodología prototipada** donde hemos diseñado diferentes prototipos de la página en diferentes formatos *(papel y [software gráfico](https://www.figma.com/)).* Una vez elegido el diseño, se recreó en HTML y CSS pasándolo por último a **hugo**.
+
+Por último, hemos usado **Scrum** como marco de trabajo durante todo el proyecto.
 
 # Descripción Técnica
 
- ## Partes Interesadas y Requisitos Funcionales/No Funcionales
- Como parte interesada solo tenemos a lo que vienen siendo los empleados de la empresa que necesitan visualizar y gestionar los elementos de 
- la base de datos con nuestra aplicación.  Podemos denominar esta parte interesada como *Empleado*.
+## Partes Interesadas y Requisitos Funcionales/No Funcionales
+Como parte interesada solo tenemos a lo que vienen siendo los empleados de la empresa que necesitan visualizar y gestionar los elementos de
+la base de datos con nuestra aplicación. Podemos denominar esta parte interesada como *Empleado*.
 
- **Requisitos Funcionales**
- - RF_Epleado_01: Visualizar Elementos (R)
+**Requisitos Funcionales**
+- RF_Empleado_01: Visualizar Elementos (R)
 
- - RF_Epleado_02: Crear Elementos (C)
+- RF_Empleado_02: Crear Elementos (C)
 
- - RF_Epleado_03: Modificar Elementos (U)
+- RF_Empleado_03: Modificar Elementos (U)
 
- - RF_Epleado_04: Borrar Elementos (D)
+- RF_Empleado_04: Borrar Elementos (D)
 
- **Requisitos No Funcionales**
- - RnF_01: Recolección Automática de Datos
-   - Al crear un nuevo elemento se usara un web scraper para recolectar automáticamente datos sobre ese elemento.
- - RnF_02: Catalogación de Elementos
-   - A cada elemento se asignaran categorías que servirán para agruparlos
- - RnF_03: Creación de Gráficos
-   - Se generaran automáticamente gráficos al renderizar la pagina
+**Requisitos No Funcionales**
+- RnF_01: Recolección Automática de Datos
+- Al crear un nuevo elemento se usará un web scraper para recolectar automáticamente datos sobre ese elemento.
+- RnF_02: Catalogación de Elementos
+- A cada elemento se asignaran categorías que servirán para agruparlos
+- RnF_03: Creación de Gráficos
+- Se generaran automáticamente gráficos al renderizar la página
 
  ## Diagrama de Casos de Uso
 
@@ -178,21 +183,21 @@ web-scraper | testing | generación de gráficos
   - **Beautiful Soup 4** es una biblioteca de Python para extraer datos de archivos HTML y XML dejando a elegir el parser para proporcional formas de navegación, búsqueda y modificación. [Referencia](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
   - **requests** es una librería HTTP para Python usada para efectuar peticiones HTTP y hacerlas más amigables.
   [Referencia](https://docs.python-requests.org/en/latest/)
-  - **fake-headers** usada para generar una cabecera aleatoria para enmascarar diferentes peticiones y que no vengan bloqueadas.
+  - **fake-headers** utilizada para generar una cabecera aleatoria para enmascarar diferentes peticiones y que no vengan bloqueadas.
   [Referencia](https://pypi.org/project/fake-headers/)
   - **matplotlib** es una librería para crear animaciones estáticas y visualizaciones interactivas en Python. [Referencia](https://matplotlib.org/stable/)
-  - **pytest** es un framework usado para escribir casos test y poner aprueba aplicaciones y librerías. [Referencia](https://docs.pytest.org/en/6.2.x/)
+  - **pytest** es un framework utilizado para escribir casos test y poner aprueba aplicaciones y librerías. [Referencia](https://docs.pytest.org/en/6.2.x/)
   - **coverage** junto a *pytest* es una herramienta para medir el código cubierto de un programa. Monitoriza el programa informando de que cantidad de código ha sido ejecutada. [Referencia](https://coverage.readthedocs.io/en/6.2/)
 - **[MongoDB](https://docs.mongodb.com/)**
   - **pymongo** es una librería que contiene herramientas para trabajar con [MongoDB](http://www.mongodb.org/). [Referencia](https://pymongo.readthedocs.io/en/stable/)
 - **[Hugo](https://gohugo.io/documentation/)**
-  - *Framework* empleado para la creación de sitios webs estáticos.
+- *Framework* empleado para la creación de sitios webs estáticos.
 - **HTML5 y CSS**
-  - Estilización de la parte web junto a hugo.
+- Estilización de la parte web junto a hugo.
 - **[Git](https://git-scm.com/docs)**
-  - Realización de cambios y subida de versiones modificadas independientes, no sobrescribiendo en el archivo original.
+- Realización de cambios y subida de versiones modificadas independientes, no sobrescribiendo en el archivo original.
 - **Markdown**
-  - Lenguaje de marcado ligero utilizado en **gohugo**
+- Lenguaje de marcado ligero utilizado en **gohugo**
 
 # Diseño
 
@@ -323,16 +328,17 @@ web-scraper | testing | generación de gráficos
 ```
 
 ## Pruebas
+
 Organizamos nuestras pruebas de manera que cada unidad hubiese mínimo 2 test:
-- un test que simulase una ejecución correcta
-- un test que simulase el peor caso posible
 
-Con estos test ya se podía iniciar a codificar. Después, si había mas casos para tener en cuenta o se nos ocurría mas test los 
-hibamos añadiendo.
+- Un test que simulase una ejecución correcta.
+- Un test que simulase el peor caso posible.
 
-Para mas concretización sobre los test, véase el file [pytest.ini](https://github.com/stonarini/Bunyols/blob/develop/pytest.ini) o la carpeta de test en la rama [develop](https://github.com/stonarini/Bunyols/tree/develop/test).
+Con estos test ya se podía iniciar a codificar. Después, si había más casos a tener en cuenta se iba añadiendo durante el desarrollo,
 
-Lo que si merece la pena mencionar son los test del modulo *database*, que están diseñados de manera que un elemento se cree, actualice y luego se borre, sin dejar elementos no queridos en la base de datos.
+Para más concretización sobre los test, véase el file [pytest.ini](https://github.com/stonarini/Bunyols/blob/develop/pytest.ini) o la carpeta de test en la rama [develop](https://github.com/stonarini/Bunyols/tree/develop/test).
+
+Lo que si merece la pena mencionar son los test del módulo *database*, que están diseñados de manera que un elemento se cree, actualice y luego se borre, sin dejar elementos no queridos en la base de datos.
 
 ## Coverage
 
@@ -343,42 +349,42 @@ Con unos pocos test deberíamos llegar al 100% sin problemas.
 
 ## Pruebas Esquema BBDD
 
+
 ```
-En pytest, cuando ejecutas los test, un . verde significa que el test ha pasado y una F roja 
-significa que ha fallado. Todo el output del programa generado por un test vendrá antes del . 
+En pytest, cuando ejecutas los test, un . verde significa que el test ha pasado y una F roja
+significa que ha fallado. Todo el output del programa generado por un test vendrá antes del .
 o F que represente ese test.
 
-i.e: 
+i.e:
 test/test_prueba.py ..
-Este test ha fallado 
+Este test ha fallado
 F Este test NO ha fallado
 .
 
-En este ejemplo podemos ver que hay 4 test.  
-Los dos primeros han pasado sin ningún output, mientras que el tercero ha fallado y ha tenido 
+En este ejemplo podemos ver que hay 4 test.
+Los dos primeros han pasado sin ningún output, mientras que el tercero ha fallado y ha tenido
 output.
 El cuarto no ha fallado y ha tenido también un output descriptivo.
 ```
 
 ### Create
 Como podemos observar en los [test de create](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_1_create.py),
-seguimos nuestro diseño de un test que pase y otro que no, así que en estos test intentamos meter un documento que no sigue nuestro esquema y otro que si:  
+seguimos nuestro diseño de un test que pase y otro que no, así que en estos test intentamos meter un documento que no sigue nuestro esquema y otro que si:
 ![create](images/create.png)
 
 ### Read
-En los [test de find](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_2_find.py) test intentamos leer dos 
-elementos, uno que no existe y otro que si. Los dos test pasan sin problema:  
+En los [test de find](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_2_find.py) test intentamos leer dos
+elementos, uno que no existe y otro que si. Los dos test pasan sin problema:
 ![find](images/find.png)
 
-
 ### Update
-En el casos de los [test de update](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_3_update.py) tenemos tres test, uno que intenta añadir un parámetro *test* que no esta presente en el esquema, otro que intenta añadir el parámetro opcional *family* que si que esta presente en el esquema pero no es obligatorio, y por ultimo este test simula una actualización de las reviews y un cambio de precio.  
-Como podemos observar el primer test da error y nos dice si estamos seguros que nuestro documento sigue el esquema, mientras que los otros dos test pasan sin problemas.  
+En el caso de los [test de update](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_3_update.py) tenemos tres test, uno que intenta añadir un parámetro *test* que no está presente en el esquema, otro que intenta añadir el parámetro opcional *family* que sí que está presente en el esquema, pero no es obligatorio, y por último este test simula una actualización de las reviews y un cambio de precio.
+Como podemos observar el primer test da error y nos dice si estamos seguros de que nuestro documento sigue el esquema, mientras que los otros dos test pasan sin problemas.
 ![update](images/update.png)
 
 ### Delete
-Como ultimo, estan los [tests de delete](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_4_delete.py). El primer test borra el elemento creado en los *tests de create*, mientras que el segundo test intenta borrar un elemento que no existe.  
-Aquí podemos observar como el primer test pasa sin problema, mientras que el segundo nos avisa de que el elemento no existe:  
+Como último, están los [tests de delete](https://github.com/stonarini/Bunyols/blob/develop/test/database/test_4_delete.py). El primer test borra el elemento creado en los *tests de create*, mientras que el segundo test intenta borrar un elemento que no existe.
+Aquí podemos observar como el primer test pasa sin problema, mientras que el segundo nos avisa de que el elemento no existe:
 ![delete](images/delete.png)
 
 # Comparación Temporal
@@ -405,7 +411,9 @@ Predicción de Tiempo: 34h
 
 Tiempo Real: 56h y 40min
 ```
-## Justificación Temporal
+
+## Justificación temporal
+
 Teniendo el gráfico presente la tarea en la que más hemos invertido tiempo ha sido en la creación de nuestro propio scraper, teníamos la opción de usar el scraper ya hecho por nuestros tutores de segundo, pero prescindimos de este al no ser posible adaptarlo del todo a los requisitos que queríamos.
 
 Invertimos así el tiempo teniendo en mente que la lógica detrás de 'markdownify' no nos iba a ocupar el tiempo que sabíamos la creación del scraper desde cero sí.
