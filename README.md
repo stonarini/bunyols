@@ -396,6 +396,14 @@ Para tener bajo control el tiempo utilizado y para poder comparar nuestras estim
   
 ![clockify](images/clockify.png)
 
+Nuestra prediccion temporal fue 34 horas, aunque no contamos con cosas como la configuracion, documentacion y refactorizacion:
+
+![time](images/time.png)
+```yaml
+Prediccion de Tiempo: 34h
+
+Tiempo Real: 56h y 40min
+```
 ## Justificación temporal
 Teniendo el gráfico presente la tarea en la que más hemos invertido tiempo ha sido en la creación de nuestro propio scraper, teníamos la opción de usar el scraper ya hecho por nuestros tutores de segundo, pero prescindimos de este al no ser posible adaptarlo del todo a los requisitos que queríamos.
 
