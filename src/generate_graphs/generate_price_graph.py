@@ -1,7 +1,13 @@
 import matplotlib.pyplot as plt
+import math
 
 
 def generate_price_graph(path, dates, prices):
+
+    for i,price in enumerate(prices):
+        if not price[1:].isnumeric():
+            del prices[i]
+            del dates[i]
 
     plt.figure(figsize=(7.11, 3.55), facecolor="white")
     plt.rcParams["font.sans-serif"] = ["Verdana", "Dejavu Sans"]
@@ -23,11 +29,11 @@ def generate_price_graph(path, dates, prices):
     price_max = lambda x: str(round(float(max(x)[1:])))
 
     plt.xticks(dates, tick_dates, fontsize=12)
-    plt.yticks(
-        (0, len(prices) - 1),
-        ["$" + price_min(prices), "$" + price_max(prices)],
-        fontsize=12,
-    )
+    if len(prices) > 0:
+        plt.yticks( (0, len(prices) - 1),
+            ["$" + price_min(prices), "$" + price_max(prices)],
+            fontsize=12,
+        )
     plt.tick_params(axis=u"both", which=u"both", length=0)
 
     plt.title("Prices", fontsize=20)

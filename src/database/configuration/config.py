@@ -1,4 +1,4 @@
-USERNAME = "eze"
-PASSWORD = "eze"
-DATABASE = "bunyols_library"
-URI = f"mongodb+srv://{USERNAME}:{PASSWORD}@bunyols-cluster0.fjgny.mongodb.net/{DATABASE}?retryWrites=true&w=majority"
+USERNAME = "samu"
+PASSWORD = "samu"
+DATABASE = "Bunyols"
+URI = f"mongodb+srv://{USERNAME}:{PASSWORD}@bunyols.qqgeajx.mongodb.net/{DATABASE}?retryWrites=true&w=majority"
