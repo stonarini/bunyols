@@ -1,23 +1,22 @@
 footer {
   background-color: black;
-  width: 95%;
-  margin-left: 2.5%;
-  margin-top: 1%;
-  box-sizing: border-box;
+  width: 95vw;
+  height: 6vh;
+  margin: 2vh 2.5vw;
 }
 
 header {
   background-color: black;
-  width: 95%;
-  margin-left: 2.5%;
-  margin-top: 1%;
-  box-sizing: border-box;
+  width: 95vw;
   display: flex;
+  height: 6vh;
+  margin: 2vh 2.5vw;
 }
 
 nav {
   margin-left: 80%;
   width: 20%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -53,8 +52,9 @@ a {
 span {
   padding: 2%;
   flex: 1 1 auto;
-  text-align: center;
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 span + span {

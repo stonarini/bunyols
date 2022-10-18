@@ -7,8 +7,8 @@ def create_info_list(book):
         key: value for key, value in book.items() if key not in title_list
     }
 
-    info_list = ""
+    info_list = "<div> \n\n"
     for key, value in info_list_dict.items():
-        info_list += create_list(key, value) + "\n"
-
+        info_list += create_list(key, value) + "\n\n"
+    info_list +=  "<br /> \n\n"
     return info_list

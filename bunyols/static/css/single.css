@@ -2,64 +2,71 @@ body {
   margin: 0;
   padding: 0;
   font-family: Verdana, "Dejavu Sans", Tahoma, sans-serif;
-  font-size: 2.2vw;
+  font-size: calc(15px + 0.390625vw);
   max-height: 100vh;
 }
 
 main {
-  margin: 1% 2%;
-  padding: 0 2%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 55vw 40vw;
+  width: 95vw;
+  height: 80vh;
+  margin: 0 2.5vw;
 }
 
 article {
-  width: 50%;
-  padding: 2%;
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+  justify-content: center;
+  grid-template-rows: max-content;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+object {
+  width: 100%;
 }
 
 h1 {
-  font-size: 5.5vw;
-  margin-bottom: 0;
-  margin-left: 3%;
+  font-size: 3em;
+  margin: 0;
   position: relative;
-}
-
-h1:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 15%;
-  height: 3px;
-  width: 30%; /* or 100px */
-  border-bottom: 3px solid black;
 }
 
 h2 {
-  font-size: 3.5vw;
-  margin-bottom: 0;
-  margin-left: 3%;
-  position: relative;
+  font-size: 2em;
+  text-transform: capitalize;
+  margin: 0;
 }
 
-h2:before {
+h2::after,
+h1::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: 3%;
-  height: 3px;
-  width: 30%; /* or 100px */
+  height: 10px;
+  width: 20%;
   border-bottom: 3px solid black;
 }
 
+h1::after {
+  width: 40%;
+}
+
 h3 {
-  font-size: 3.3vw;
-  margin-top: 0;
+  font-size: 1.8em;
+  margin: 0;
   text-align: center;
   font-weight: normal;
+  margin-top: 20px;
 }
 
 ul {
-  font-size: 2.8vw;
+  font-size: 1.5em;
   margin: 0 10%;
   padding: 0;
   list-style: none;
@@ -69,21 +76,12 @@ ul {
 ul:after {
   content: "";
   position: absolute;
-  right: 25%;
-  bottom: -10%;
-  height: 3px;
-  width: 50%; /* or 100px */
+  height: 20px;
   border-bottom: 3px solid black;
+  width: 55%;
+  margin-left: 30%;
 }
 
-li {
-  display: inline-block;
-}
-
-aside {
-  width: 50%;
-}
-
-object {
-  max-width: 85%;
+div {
+  margin: 5vh 0 5vh 5vw;
 }

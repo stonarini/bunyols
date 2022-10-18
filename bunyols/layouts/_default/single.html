@@ -1,17 +1,15 @@
 {{ define "main" }}
 <main>
     <article>
-        {{ .Content }}
+        {{ .Content | markdownify }}
     </article>
 
     <aside>
         <section>
-            <object data="/images/{{ .Params.ISBN_13 }}/reviews.svg"
-                type="image/svg+xml"></object>
+            <object data="/images/{{ .Params.ISBN_13 }}/reviews.svg" type="image/svg+xml"></object>
         </section>
         <section>
-            <object data="/images/{{ .Params.ISBN_13 }}/prices.svg"
-                type="image/svg+xml"></object>
+            <object data="/images/{{ .Params.ISBN_13 }}/price.svg" type="image/svg+xml"></object>
         </section>
     </aside>
 </main>
