@@ -20,8 +20,8 @@ def bunyols(item_list, path):
         ISBN = book["ISBN_13"]
         price, reviews = book.pop("price"), book.pop("reviews")
         markdown = markdownify(book)
-        utilities.write_to_file(path + "content/bunyols/", f"{ISBN}.md", markdown)
-        generate_graphs(path + "static/images/" + ISBN, reviews, price)
+        utilities.write_to_file(path + "/content/bunyols/", f"{ISBN}.md", markdown)
+        generate_graphs(path + "/static/images/" + ISBN, reviews, price)
 
 
 if __name__ == "__main__":
